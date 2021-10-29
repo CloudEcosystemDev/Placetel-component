@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "from_number": {
+                    "type": "string"
+                },
+                "to_number": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "file": {
+                    "type": "string",
+                    "description": "Base64 encoded PDF file as [data uri](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)"
+                },
+                "header": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "from_number",
+                "to_number",
+                "email",
+                "file"
+            ],
+            "description": "Create outbound fax"
+        }
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "speeddial": {
+                    "type": "string"
+                },
+                "first_name": {
+                    "type": "string"
+                },
+                "last_name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "email_work": {
+                    "type": "string"
+                },
+                "company": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "address_work": {
+                    "type": "string"
+                },
+                "phone_work": {
+                    "type": "string"
+                },
+                "mobile_work": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "mobile": {
+                    "type": "string"
+                },
+                "fax": {
+                    "type": "string"
+                },
+                "fax_work": {
+                    "type": "string"
+                },
+                "facebook_url": {
+                    "type": "string"
+                },
+                "linkedin_url": {
+                    "type": "string"
+                },
+                "xing_url": {
+                    "type": "string"
+                },
+                "twitter_account": {
+                    "type": "string"
+                },
+                "user_id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "blocked": {
+                    "type": "boolean",
+                    "enum": [
+                        true,
+                        false
+                    ]
+                }
+            },
+            "description": "Create a contact"
+        }
+    }
+}

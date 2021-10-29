@@ -1,0 +1,60 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "example": "sub-112ba1"
+        },
+        "url": {
+            "type": "string",
+            "example": "https://example.org/callback"
+        },
+        "incoming": {
+            "type": "boolean",
+            "example": true,
+            "enum": [
+                true,
+                false
+            ]
+        },
+        "outgoing": {
+            "type": "boolean",
+            "example": true,
+            "enum": [
+                true,
+                false
+            ]
+        },
+        "hungup": {
+            "type": "boolean",
+            "example": true,
+            "enum": [
+                true,
+                false
+            ]
+        },
+        "accepted": {
+            "type": "boolean",
+            "example": true,
+            "enum": [
+                true,
+                false
+            ]
+        },
+        "phone": {
+            "type": "boolean",
+            "example": true,
+            "enum": [
+                true,
+                false
+            ]
+        },
+        "numbers": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "example": "+4922129191999"
+            }
+        }
+    }
+}

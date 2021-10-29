@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "mac": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "digits": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "digits"
+            ],
+            "description": "Send DTMF Digits"
+        }
+    }
+}

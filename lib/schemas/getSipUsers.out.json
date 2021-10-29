@@ -1,0 +1,218 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1,
+            "description": "Internal ID of the SIP user"
+        },
+        "sipuid": {
+            "type": "string",
+            "example": "777712345678@fbpx.de",
+            "description": "SIPUID used for SIP communication"
+        },
+        "username": {
+            "type": "string",
+            "example": "777712345678",
+            "description": "Username used for SIP communication"
+        },
+        "password": {
+            "type": "string",
+            "example": "supersecret",
+            "description": "Password used for SIP communication (only visible when fetching a single record or after creating one; not for Placetel MOBILE users)"
+        },
+        "domain": {
+            "type": "string",
+            "example": "fbpx.de",
+            "description": "Domain used for SIP communication"
+        },
+        "name": {
+            "type": "string",
+            "example": "John"
+        },
+        "description": {
+            "type": "string",
+            "example": "John's sip user"
+        },
+        "did": {
+            "type": "integer",
+            "format": "int32",
+            "example": 23,
+            "description": "Internal extension of this SIP user"
+        },
+        "callerid": {
+            "type": "string",
+            "example": "022112345678",
+            "description": "The caller ID for outbound calls"
+        },
+        "type": {
+            "type": "string",
+            "example": "standard",
+            "enum": [
+                "legacy_standard",
+                "blf",
+                "standard",
+                "fax",
+                "trunk"
+            ]
+        },
+        "webuser_id": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1,
+            "description": "Placetel user connected with this SIP user"
+        },
+        "webuser": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1
+                },
+                "login": {
+                    "type": "string",
+                    "example": "john.doe"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "johndoe@example.org"
+                },
+                "first_name": {
+                    "type": "string",
+                    "example": "John"
+                },
+                "last_name": {
+                    "type": "string",
+                    "example": "Doe"
+                },
+                "type": {
+                    "type": "string",
+                    "example": "MainAccount"
+                },
+                "did": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": "321",
+                    "description": "Internal DID"
+                },
+                "callerid": {
+                    "type": "string",
+                    "example": "0221123456789",
+                    "description": "Outgoing caller ID"
+                },
+                "primary_sip_user_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": "123"
+                },
+                "locale": {
+                    "type": "string",
+                    "example": "de",
+                    "enum": [
+                        "de",
+                        "en"
+                    ],
+                    "description": "Language (ISO-639-1 Code)"
+                },
+                "obfuscate_billing_records": {
+                    "type": "boolean",
+                    "example": true,
+                    "description": "Obfuscate billing records for this user"
+                },
+                "obfuscate_others": {
+                    "type": "boolean",
+                    "example": true,
+                    "description": "Obfuscate numbers not in rights_numbers for this user"
+                },
+                "admin_user": {
+                    "type": "boolean",
+                    "example": true
+                },
+                "rights_numbers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "example": [
+                            "02211234589",
+                            "02221234589"
+                        ]
+                    }
+                },
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2018-08-14T11:42:47.000+02:00"
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2018-08-16T11:42:47.000+02:00"
+                }
+            },
+            "description": "Fetch a list of all users of the account"
+        },
+        "automatic_prefix": {
+            "type": "string",
+            "example": "0221",
+            "description": "Prepend this prefix for outbound calls automatically"
+        },
+        "blocked_prefixes": {
+            "type": "string",
+            "example": "0211",
+            "description": "A comma separated list of blocked destinations"
+        },
+        "routing_plan_id": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1,
+            "description": "Fallback routing plan for busy/no answer"
+        },
+        "online": {
+            "type": "boolean",
+            "example": true,
+            "enum": [
+                true,
+                false
+            ],
+            "description": "Current online status"
+        },
+        "registrations": {
+            "type": "string"
+        },
+        "contact_speeddialing": {
+            "type": "boolean",
+            "example": true,
+            "enum": [
+                true,
+                false
+            ]
+        },
+        "p_asserted_identity": {
+            "type": "string"
+        },
+        "hotdesk_login": {
+            "type": "string"
+        },
+        "hotdesk_pin": {
+            "type": "string"
+        },
+        "hotdesk_type": {
+            "type": "string"
+        },
+        "hotdesk_provisioning_id": {
+            "type": "string"
+        },
+        "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2018-08-14T11:42:47.000+02:00"
+        },
+        "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2018-08-16T11:42:47.000+02:00"
+        }
+    }
+}

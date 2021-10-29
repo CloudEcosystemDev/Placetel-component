@@ -1,0 +1,378 @@
+{
+    "type": "object",
+    "properties": {
+        "number_or_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "A name for the routing object"
+                },
+                "forward": {
+                    "type": "object",
+                    "properties": {
+                        "behaviour": {
+                            "type": "string",
+                            "enum": [
+                                "ringing",
+                                "mailbox",
+                                "prompt_and_disconnect",
+                                "prompt_and_ringing"
+                            ]
+                        },
+                        "prompt_id": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "destinations": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "targets": {
+                                        "type": "string",
+                                        "description": "sipuid of a sipuser or external phone number"
+                                    },
+                                    "ringing_time": {
+                                        "type": "integer",
+                                        "format": "int32"
+                                    }
+                                },
+                                "required": [
+                                    "targets"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "music_on_hold": {
+                    "type": "boolean",
+                    "enum": [
+                        true,
+                        false
+                    ]
+                },
+                "notify_external_api": {
+                    "type": "boolean",
+                    "enum": [
+                        true,
+                        false
+                    ]
+                },
+                "group": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "group_ringing_time": {
+                            "type": "string",
+                            "enum": [
+                                40,
+                                30,
+                                25,
+                                20,
+                                15,
+                                10
+                            ],
+                            "default": 40
+                        },
+                        "backup_behaviour": {
+                            "type": "string",
+                            "enum": [
+                                "ringing",
+                                "mailbox",
+                                "prompt_and_disconnect",
+                                "prompt_and_ringing"
+                            ]
+                        },
+                        "backup_routing_object_id": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    "required": [
+                        "id"
+                    ]
+                },
+                "plan": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "destinations": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "targets": {
+                                        "type": "string",
+                                        "description": "sipuid of a sipuser or external phone number"
+                                    },
+                                    "ringing_time": {
+                                        "type": "integer",
+                                        "format": "int32"
+                                    }
+                                },
+                                "required": [
+                                    "targets"
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "id"
+                    ]
+                },
+                "ivr": {
+                    "type": "object",
+                    "properties": {
+                        "prompt_id": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "item_1_id": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "item_2_id": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "item_3_id": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "item_4_id": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "item_5_id": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "item_6_id": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "item_7_id": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "item_8_id": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "item_9_id": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "catchall_routing_object_id": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                },
+                "queue": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    "required": [
+                        "id"
+                    ]
+                },
+                "api": {
+                    "type": "object",
+                    "properties": {
+                        "max_retries": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "backup_routing_plan_id": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "prompt_id": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    "required": [
+                        "max_retries"
+                    ]
+                },
+                "mailbox": {
+                    "type": "object",
+                    "properties": {
+                        "active": {
+                            "type": "boolean",
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "greeting_id": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "mp3": {
+                            "type": "boolean",
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        }
+                    }
+                },
+                "notification": {
+                    "type": "object",
+                    "properties": {
+                        "salutation": {
+                            "type": "string"
+                        },
+                        "email": {
+                            "type": "string"
+                        },
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "none",
+                                "all",
+                                "voicemail",
+                                "missed"
+                            ]
+                        },
+                        "receiver": {
+                            "type": "string",
+                            "enum": [
+                                "global",
+                                "local"
+                            ]
+                        }
+                    }
+                },
+                "time_settings": {
+                    "type": "object",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "mon": {
+                            "type": "boolean",
+                            "description": "Activates routing objects for mondays",
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "tue": {
+                            "type": "boolean",
+                            "description": "Activates routing objects for tuesdays",
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "wed": {
+                            "type": "boolean",
+                            "description": "Activates routing objects for wednesdays",
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "thu": {
+                            "type": "boolean",
+                            "description": "Activates routing objects for thursdays",
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "fri": {
+                            "type": "boolean",
+                            "description": "Activates routing objects for fridays",
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "sat": {
+                            "type": "boolean",
+                            "description": "Activates routing objects for saturdays",
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "sun": {
+                            "type": "boolean",
+                            "description": "Activates routing objects for sundays",
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "extended_time_settings": {
+                            "type": "boolean",
+                            "description": "Activates extended time settings options. ",
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "time_from": {
+                            "type": "string",
+                            "description": "Only used when `extended_time_settings` is `false`.<br> Example: `08:00:00`"
+                        },
+                        "time_to": {
+                            "type": "string",
+                            "description": "Only used when `extended_time_settings` is `false`.<br> Example: `19:59:59`"
+                        },
+                        "additional_dates": {
+                            "type": "string",
+                            "description": "Additional dates w/o years to activate routing object for.<br> Only used when `extended_time_settings` is `true`.<br>Example: `9.9,2.1,24.12,25.12,31.12`"
+                        },
+                        "time_ranges": {
+                            "type": "string",
+                            "description": "Time ranges to activate routing object for.<br> Only used when `extended_time_settings` is `true`.<br>Example: `08:30:00-13:29:59,14:30:00-17:59:59`"
+                        }
+                    }
+                },
+                "custom_callerid": {
+                    "type": "object",
+                    "properties": {
+                        "callerid_enabled": {
+                            "type": "boolean",
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "callerid_name": {
+                            "type": "string"
+                        },
+                        "callerid_number": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "description": "Update routing"
+        }
+    }
+}

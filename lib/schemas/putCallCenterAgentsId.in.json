@@ -1,0 +1,38 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "priority": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Priority of the agent"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Describes the agent"
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "offline",
+                        "online",
+                        "dail_out",
+                        "working",
+                        "pause"
+                    ]
+                }
+            },
+            "description": "Update an agent"
+        }
+    }
+}

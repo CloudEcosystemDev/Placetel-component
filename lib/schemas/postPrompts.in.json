@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of the resource"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "More detailed description of the resource"
+                },
+                "text": {
+                    "type": "string",
+                    "description": "Text used to synthezize the prompt"
+                },
+                "voice": {
+                    "type": "string",
+                    "description": "Voice used to synthezize the prompt"
+                },
+                "file": {
+                    "type": "string",
+                    "description": "Base64 encoded audio file as [data uri](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)"
+                }
+            },
+            "required": [
+                "name",
+                "voice"
+            ],
+            "description": "Create a prompt"
+        }
+    }
+}

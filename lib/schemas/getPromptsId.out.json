@@ -1,0 +1,37 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+        },
+        "name": {
+            "type": "string",
+            "example": "My prompt"
+        },
+        "description": {
+            "type": "string",
+            "example": "Describes my prompt"
+        },
+        "text": {
+            "type": "string",
+            "example": "Please leave a message after the beeeep."
+        },
+        "file": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://example.org/prompt.mp3"
+        },
+        "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2018-08-16T11:42:47.000+02:00"
+        },
+        "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2018-08-14T11:42:47.000+02:00"
+        }
+    }
+}

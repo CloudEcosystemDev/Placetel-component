@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "sipuid": {
+                    "type": "string",
+                    "description": "Sipuid to use (e.g. 7771234567@fpbx.de)"
+                },
+                "target": {
+                    "type": "string",
+                    "description": "Number to call"
+                },
+                "from_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "sipuid",
+                "target"
+            ],
+            "description": "Initate a call"
+        }
+    }
+}

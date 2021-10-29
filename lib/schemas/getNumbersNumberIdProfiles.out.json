@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+        },
+        "name": {
+            "type": "string",
+            "example": "Standard"
+        },
+        "number_id": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+        },
+        "active": {
+            "type": "boolean",
+            "example": true,
+            "enum": [
+                true,
+                false
+            ]
+        }
+    }
+}

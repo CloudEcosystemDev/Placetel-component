@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {
+        "mac": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "line": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "call_id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "number": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "line",
+                "call_id",
+                "number"
+            ],
+            "description": "Blind transfer"
+        }
+    }
+}

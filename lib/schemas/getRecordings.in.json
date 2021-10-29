@@ -1,0 +1,57 @@
+{
+    "type": "object",
+    "properties": {
+        "order": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "asc",
+                "desc"
+            ],
+            "default": "desc"
+        },
+        "page": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+        },
+        "per_page": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "minimum": 0,
+            "maximum": 100,
+            "default": 25
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "filter_direction_": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "default": [
+                            "in",
+                            "out",
+                            "queue"
+                        ]
+                    }
+                }
+            }
+        },
+        "filter_from_": {
+            "required": false,
+            "type": "string"
+        },
+        "filter_to_": {
+            "required": false,
+            "type": "string"
+        },
+        "filter_date_": {
+            "required": false,
+            "type": "string",
+            "format": "date"
+        }
+    }
+}

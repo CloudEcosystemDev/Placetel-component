@@ -1,0 +1,66 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "service": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "incoming": {
+                    "type": "boolean",
+                    "description": "Incoming calls",
+                    "enum": [
+                        true,
+                        false
+                    ]
+                },
+                "outgoing": {
+                    "type": "boolean",
+                    "description": "Outgoing calls",
+                    "enum": [
+                        true,
+                        false
+                    ]
+                },
+                "hungup": {
+                    "type": "boolean",
+                    "description": "Call hungup",
+                    "enum": [
+                        true,
+                        false
+                    ]
+                },
+                "accepted": {
+                    "type": "boolean",
+                    "description": "Call accepted",
+                    "enum": [
+                        true,
+                        false
+                    ]
+                },
+                "phone": {
+                    "type": "boolean",
+                    "description": "CTI events",
+                    "enum": [
+                        true,
+                        false
+                    ]
+                },
+                "numbers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "service",
+                "url"
+            ]
+        }
+    }
+}

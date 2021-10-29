@@ -1,0 +1,55 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of the agent"
+                },
+                "extension_type": {
+                    "type": "string",
+                    "description": "Extension type",
+                    "enum": [
+                        "SIP",
+                        "PSTN"
+                    ]
+                },
+                "extension_sip": {
+                    "type": "string",
+                    "description": "SIP extension of the agent"
+                },
+                "extension_pstn": {
+                    "type": "string",
+                    "description": "PSTN extension of the agent"
+                },
+                "agent_type": {
+                    "type": "string",
+                    "description": "Type of the agent",
+                    "enum": [
+                        "Supervisor",
+                        "Agent"
+                    ],
+                    "default": "Agent"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Describes the agent"
+                },
+                "priority": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Priority of the agent"
+                }
+            },
+            "required": [
+                "name",
+                "extension_type",
+                "extension_sip",
+                "extension_pstn"
+            ],
+            "description": "Create an agent"
+        }
+    }
+}

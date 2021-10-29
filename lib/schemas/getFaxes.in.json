@@ -1,0 +1,46 @@
+{
+    "type": "object",
+    "properties": {
+        "order": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "asc",
+                "desc"
+            ],
+            "default": "desc"
+        },
+        "page": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+        },
+        "per_page": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "minimum": 0,
+            "maximum": 100,
+            "default": 25
+        },
+        "filter_type_": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "inbound,outbound",
+                "inbound",
+                "outbound"
+            ],
+            "default": "inbound,outbound"
+        },
+        "filter_from_number_": {
+            "required": false,
+            "type": "string"
+        },
+        "filter_to_number_": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

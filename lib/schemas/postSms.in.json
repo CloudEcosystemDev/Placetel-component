@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "recipient": {
+                    "type": "string",
+                    "description": "Number to send message to"
+                },
+                "message": {
+                    "type": "string",
+                    "description": "Your message"
+                }
+            },
+            "required": [
+                "recipient",
+                "message"
+            ],
+            "description": "Send SMS"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "type": "object",
+    "properties": {
+        "mac": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "params": {
+                    "type": "object"
+                }
+            },
+            "required": [
+                "params"
+            ],
+            "description": "Set config params"
+        }
+    }
+}

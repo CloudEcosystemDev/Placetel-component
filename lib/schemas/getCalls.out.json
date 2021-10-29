@@ -1,0 +1,213 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+        },
+        "type": {
+            "type": "string",
+            "example": "voicemail",
+            "enum": [
+                "voicemail",
+                "missed",
+                "blocked",
+                "accepted"
+            ]
+        },
+        "from_number": {
+            "type": "string",
+            "example": "022129191999"
+        },
+        "to_number": {
+            "type": "object",
+            "properties": {
+                "number": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer",
+                            "format": "int32",
+                            "example": 1
+                        },
+                        "prefix": {
+                            "type": "string",
+                            "example": "0221"
+                        },
+                        "numonly": {
+                            "type": "string",
+                            "example": "29191999"
+                        },
+                        "number": {
+                            "type": "string",
+                            "example": "022129191999"
+                        },
+                        "activated": {
+                            "type": "boolean",
+                            "example": true,
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "test_number": {
+                            "type": "boolean",
+                            "example": true,
+                            "enum": [
+                                true,
+                                false
+                            ]
+                        },
+                        "name": {
+                            "type": "string",
+                            "example": "Number one"
+                        },
+                        "description": {
+                            "type": "string",
+                            "example": "This describes my number"
+                        },
+                        "updated_at": {
+                            "type": "string",
+                            "format": "date-time",
+                            "example": "2018-08-16T11:42:47.000+02:00"
+                        },
+                        "created_at": {
+                            "type": "string",
+                            "format": "date-time",
+                            "example": "2018-08-16T11:42:47.000+02:00"
+                        }
+                    },
+                    "description": "Provides a list of all numbers"
+                }
+            }
+        },
+        "file_url": {
+            "type": "string",
+            "example": "URL to the voice file"
+        },
+        "duration": {
+            "type": "integer",
+            "format": "int32",
+            "example": 10
+        },
+        "contact": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1
+                },
+                "user_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1
+                },
+                "speeddial": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 1
+                },
+                "first_name": {
+                    "type": "string",
+                    "example": "Mary"
+                },
+                "last_name": {
+                    "type": "string",
+                    "example": "Jane"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "mary@example.org"
+                },
+                "email_work": {
+                    "type": "string",
+                    "format": "email",
+                    "example": "mary.jane@example.org"
+                },
+                "company": {
+                    "type": "string",
+                    "example": "Placetel"
+                },
+                "address": {
+                    "type": "string",
+                    "example": "Phone Rd. 1"
+                },
+                "address_work": {
+                    "type": "string",
+                    "example": "Phone Rd. 1"
+                },
+                "phone_work": {
+                    "type": "string",
+                    "example": "+4922129191999"
+                },
+                "mobile_work": {
+                    "type": "string",
+                    "example": "+4922129191999"
+                },
+                "phone": {
+                    "type": "string",
+                    "example": "+4922129191999"
+                },
+                "mobile": {
+                    "type": "string",
+                    "example": "+4922129191999"
+                },
+                "fax": {
+                    "type": "string",
+                    "example": "+4922129191999"
+                },
+                "fax_work": {
+                    "type": "string",
+                    "example": "+4922129191999"
+                },
+                "facebook_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "example": "https://www.facebook.com/Placetel"
+                },
+                "linkedin_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "example": "https://www.linkedin.com/company/placetel-de/"
+                },
+                "xing_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "example": "https://www.xing.com/companies/placetel.de"
+                },
+                "twitter_account": {
+                    "type": "string",
+                    "format": "uri",
+                    "example": "https://twitter.com/placetel"
+                },
+                "blocked": {
+                    "type": "boolean",
+                    "example": true,
+                    "enum": [
+                        true,
+                        false
+                    ]
+                },
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2018-08-16T11:42:47.000+02:00"
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2018-08-16T11:42:47.000+02:00"
+                }
+            },
+            "description": "Provides a list of all contacts"
+        },
+        "received_at": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2018-08-16T11:42:47.000+02:00"
+        }
+    }
+}

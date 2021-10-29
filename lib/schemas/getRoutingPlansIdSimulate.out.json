@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+        },
+        "name": {
+            "type": "string",
+            "example": "Its Routing plan"
+        },
+        "description": {
+            "type": "string",
+            "example": "Its Routing plan but let's go a little more into details here"
+        },
+        "did": {
+            "type": "integer",
+            "format": "int32",
+            "example": 42
+        },
+        "routing_object_counts": {
+            "type": "string"
+        },
+        "rings_for": {
+            "type": "string"
+        },
+        "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2018-08-16T11:42:47.000+02:00"
+        },
+        "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2018-08-14T11:42:47.000+02:00"
+        }
+    }
+}

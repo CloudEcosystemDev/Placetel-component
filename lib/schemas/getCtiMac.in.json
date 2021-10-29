@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "params": {
+            "required": true,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "mac": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        }
+    }
+}

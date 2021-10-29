@@ -1,0 +1,47 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "Action to fullfil",
+                    "enum": [
+                        "set_out_anonymous",
+                        "set_forward",
+                        "clear_forward",
+                        "login_group",
+                        "mailbox",
+                        "profile",
+                        "set_out_number",
+                        "addto_routing"
+                    ]
+                },
+                "code": {
+                    "type": "string"
+                },
+                "number": {
+                    "type": "string"
+                },
+                "group_id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "action",
+                "code"
+            ],
+            "description": "Create short code"
+        }
+    }
+}

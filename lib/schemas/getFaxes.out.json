@@ -1,0 +1,81 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+        },
+        "type": {
+            "type": "string",
+            "example": "inbound",
+            "enum": [
+                "inbound",
+                "outbound"
+            ]
+        },
+        "from_number": {
+            "type": "string",
+            "example": "022129191999"
+        },
+        "to_number": {
+            "type": "string",
+            "example": "022129191999"
+        },
+        "pages": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+        },
+        "retries": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+        },
+        "status": {
+            "type": "string",
+            "example": "success",
+            "enum": [
+                "success",
+                "failed",
+                "conversion_error",
+                "busy",
+                "working",
+                "queued"
+            ]
+        },
+        "status_info": {
+            "type": "string",
+            "example": "error negotiating T.38",
+            "description": "only populated for outbound faxes"
+        },
+        "email": {
+            "type": "string",
+            "example": "info@placetel.de"
+        },
+        "header": {
+            "type": "string",
+            "example": "Placetel"
+        },
+        "duration": {
+            "type": "integer",
+            "format": "int32",
+            "example": 1
+        },
+        "file": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://example.org/fax.pdf"
+        },
+        "report": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://example.org/report.pdf"
+        },
+        "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2018-08-16T11:42:47.000+02:00"
+        }
+    }
+}

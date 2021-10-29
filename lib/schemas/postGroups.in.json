@@ -1,0 +1,37 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "ring_all",
+                        "monitoring",
+                        "hunt"
+                    ]
+                },
+                "description": {
+                    "type": "string"
+                },
+                "member_ids": {
+                    "type": "array",
+                    "description": "Array of SipUser ids",
+                    "items": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                }
+            },
+            "required": [
+                "name",
+                "type"
+            ],
+            "description": "Create a group"
+        }
+    }
+}

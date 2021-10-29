@@ -1,0 +1,77 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "legacy_standard",
+                        "blf",
+                        "standard",
+                        "fax",
+                        "trunk"
+                    ]
+                },
+                "description": {
+                    "type": "string"
+                },
+                "did": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "callerid": {
+                    "type": "string"
+                },
+                "webuser_id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "contact_speeddialing": {
+                    "type": "boolean",
+                    "enum": [
+                        true,
+                        false
+                    ]
+                },
+                "automatic_prefix": {
+                    "type": "string"
+                },
+                "blocked_prefixes": {
+                    "type": "string"
+                },
+                "routing_plan_id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "hotdesk_login": {
+                    "type": "string"
+                },
+                "hotdesk_pin": {
+                    "type": "string"
+                },
+                "hotdesk_type": {
+                    "type": "string",
+                    "enum": [
+                        "standard",
+                        "custom",
+                        "global_did"
+                    ]
+                },
+                "hotdesk_provisioning_id": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "required": [
+                "name",
+                "type"
+            ],
+            "description": "Create a sip user"
+        }
+    }
+}

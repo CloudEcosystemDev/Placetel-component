@@ -1,0 +1,83 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "mac": {
+                    "type": "string"
+                },
+                "phone_model": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "webuser_id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "codec": {
+                    "type": "string",
+                    "enum": [
+                        "G711a",
+                        "G729a",
+                        "G722"
+                    ]
+                },
+                "call_waiting": {
+                    "type": "boolean",
+                    "enum": [
+                        true,
+                        false
+                    ]
+                },
+                "encryption": {
+                    "type": "string"
+                },
+                "locale": {
+                    "type": "string",
+                    "enum": [
+                        "de",
+                        "en",
+                        "fr",
+                        "en-GB"
+                    ]
+                },
+                "lines": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "keys": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "type": "string"
+                            },
+                            "value": {
+                                "type": "string"
+                            },
+                            "label": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "value"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "name",
+                "mac",
+                "phone_model"
+            ],
+            "description": "Creates a phone provisionings"
+        }
+    }
+}

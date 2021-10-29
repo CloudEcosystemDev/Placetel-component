@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+        "date": {
+            "required": true,
+            "type": "string",
+            "format": "date"
+        },
+        "page": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+        },
+        "per_page": {
+            "required": false,
+            "type": "integer",
+            "format": "int32",
+            "minimum": 0,
+            "maximum": 100,
+            "default": 25
+        }
+    }
+}

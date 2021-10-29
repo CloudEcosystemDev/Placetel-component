@@ -1,0 +1,77 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+        },
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "first_name": {
+                    "type": "string"
+                },
+                "last_name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "did": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Internal DID"
+                },
+                "callerid": {
+                    "type": "string",
+                    "description": "Outgoing caller ID"
+                },
+                "primary_sip_user_id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "admin_user": {
+                    "type": "boolean",
+                    "description": "Grant admin rights",
+                    "enum": [
+                        true,
+                        false
+                    ]
+                },
+                "rights_numbers": {
+                    "type": "array",
+                    "description": "Grant rights for these numbers",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "Language (ISO-639-1 Code) only de / en is supported"
+                },
+                "obfuscate_billing_records": {
+                    "type": "boolean",
+                    "description": "Obfuscate billing records for this user",
+                    "enum": [
+                        true,
+                        false
+                    ]
+                },
+                "obfuscate_others": {
+                    "type": "boolean",
+                    "description": "Obfuscate numbers not belonging to this user",
+                    "enum": [
+                        true,
+                        false
+                    ]
+                },
+                "avatar": {
+                    "type": "string",
+                    "description": "Base64 encoded image as [data uri](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)"
+                }
+            },
+            "description": "Update a subuser"
+        }
+    }
+}
