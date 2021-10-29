@@ -1001,6 +1001,21 @@
                 "out": "./lib/schemas/postUsersIdPasswordReset.out.json"
             }
         },
+        "postUsers": {
+            "main": "./lib/actions/postUsers.js",
+            "title": "Create new subuser",
+            "description": "Create a new subuser for your account",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postUsers.in.json",
+                "out": "./lib/schemas/postUsers.out.json"
+            }
+        },
         "deleteGroupsId": {
             "main": "./lib/actions/deleteGroupsId.js",
             "title": "Delete a group",
@@ -1359,6 +1374,36 @@
             "metadata": {
                 "in": "./lib/schemas/postProvisioningsIdReconfigure.in.json",
                 "out": "./lib/schemas/postProvisioningsIdReconfigure.out.json"
+            }
+        },
+        "deleteProvisioningsIdCustomConfigurations": {
+            "main": "./lib/actions/deleteProvisioningsIdCustomConfigurations.js",
+            "title": "Delete a phone provisionings custom configuration key",
+            "description": "Delete a phone provisioning custom configuration key",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteProvisioningsIdCustomConfigurations.in.json",
+                "out": "./lib/schemas/deleteProvisioningsIdCustomConfigurations.out.json"
+            }
+        },
+        "putProvisioningsIdCustomConfigurations": {
+            "main": "./lib/actions/putProvisioningsIdCustomConfigurations.js",
+            "title": "Update or create a phone provisionings custom configuration key",
+            "description": "Updates or creates a phone provisioning custom configuration key",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putProvisioningsIdCustomConfigurations.in.json",
+                "out": "./lib/schemas/putProvisioningsIdCustomConfigurations.out.json"
             }
         },
         "postProvisionings": {

@@ -1,0 +1,48 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "first_name": {
+                    "type": "string"
+                },
+                "last_name": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "A subuser without email won't be able to log in to the web portal"
+                },
+                "did": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "callerid": {
+                    "type": "string",
+                    "description": "Phone number which will be visible in outgoing calls"
+                },
+                "phone_model": {
+                    "type": "string",
+                    "description": "Name of your phone. Have look at the Devices#index API endpoint"
+                },
+                "phone_mac": {
+                    "type": "string"
+                },
+                "sip_user_type": {
+                    "type": "string",
+                    "enum": [
+                        "standard",
+                        "blf"
+                    ],
+                    "default": "standard"
+                }
+            },
+            "required": [
+                "first_name",
+                "last_name"
+            ],
+            "description": "Create new subuser"
+        }
+    }
+}

@@ -5381,6 +5381,163 @@
             }
         },
         "/users": {
+            "post": {
+                "summary": "Create new subuser",
+                "description": "Create a new subuser for your account",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "first_name": {
+                                        "type": "string"
+                                    },
+                                    "last_name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "description": "A subuser without email won't be able to log in to the web portal"
+                                    },
+                                    "did": {
+                                        "type": "integer",
+                                        "format": "int32"
+                                    },
+                                    "callerid": {
+                                        "type": "string",
+                                        "description": "Phone number which will be visible in outgoing calls"
+                                    },
+                                    "phone_model": {
+                                        "type": "string",
+                                        "description": "Name of your phone. Have look at the Devices#index API endpoint"
+                                    },
+                                    "phone_mac": {
+                                        "type": "string"
+                                    },
+                                    "sip_user_type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "standard",
+                                            "blf"
+                                        ],
+                                        "default": "standard"
+                                    }
+                                },
+                                "required": [
+                                    "first_name",
+                                    "last_name"
+                                ],
+                                "description": "Create new subuser"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Create new subuser",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "format": "int32",
+                                            "example": 1
+                                        },
+                                        "login": {
+                                            "type": "string",
+                                            "example": "john.doe"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "example": "johndoe@example.org"
+                                        },
+                                        "first_name": {
+                                            "type": "string",
+                                            "example": "John"
+                                        },
+                                        "last_name": {
+                                            "type": "string",
+                                            "example": "Doe"
+                                        },
+                                        "type": {
+                                            "type": "string",
+                                            "example": "MainAccount"
+                                        },
+                                        "did": {
+                                            "type": "integer",
+                                            "format": "int32",
+                                            "example": "321",
+                                            "description": "Internal DID"
+                                        },
+                                        "callerid": {
+                                            "type": "string",
+                                            "example": "0221123456789",
+                                            "description": "Outgoing caller ID"
+                                        },
+                                        "primary_sip_user_id": {
+                                            "type": "integer",
+                                            "format": "int32",
+                                            "example": "123"
+                                        },
+                                        "locale": {
+                                            "type": "string",
+                                            "example": "de",
+                                            "enum": [
+                                                "de",
+                                                "en"
+                                            ],
+                                            "description": "Language (ISO-639-1 Code)"
+                                        },
+                                        "obfuscate_billing_records": {
+                                            "type": "boolean",
+                                            "example": true,
+                                            "description": "Obfuscate billing records for this user"
+                                        },
+                                        "obfuscate_others": {
+                                            "type": "boolean",
+                                            "example": true,
+                                            "description": "Obfuscate numbers not in rights_numbers for this user"
+                                        },
+                                        "admin_user": {
+                                            "type": "boolean",
+                                            "example": true
+                                        },
+                                        "rights_numbers": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "example": [
+                                                    "02211234589",
+                                                    "02221234589"
+                                                ]
+                                            }
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "example": "2018-08-14T11:42:47.000+02:00"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "example": "2018-08-16T11:42:47.000+02:00"
+                                        }
+                                    },
+                                    "description": "Fetch a list of all users of the account"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Users"
+                ],
+                "operationId": "postUsers"
+            },
             "get": {
                 "summary": "Fetch all users",
                 "description": "Fetch a list of all users of the account",
@@ -11642,6 +11799,300 @@
                 "operationId": "postProvisioningsIdReconfigure"
             }
         },
+        "/provisionings/{id}/custom_configurations": {
+            "delete": {
+                "summary": "Delete a phone provisionings custom configuration key",
+                "description": "Delete a phone provisioning custom configuration key",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Delete a phone provisionings custom configuration key"
+                    }
+                },
+                "tags": [
+                    "Provisionings"
+                ],
+                "operationId": "deleteProvisioningsIdCustomConfigurations"
+            },
+            "put": {
+                "summary": "Update or create a phone provisionings custom configuration key",
+                "description": "Updates or creates a phone provisioning custom configuration key",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "configurations": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "key": {
+                                                    "type": "string"
+                                                },
+                                                "value": {
+                                                    "type": "string"
+                                                },
+                                                "attributes": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": [
+                                                "key",
+                                                "value"
+                                            ]
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "configurations"
+                                ],
+                                "description": "Update or create a phone provisionings custom configuration key"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Update or create a phone provisionings custom configuration key",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "webuser": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "format": "int32",
+                                                    "example": 1
+                                                },
+                                                "login": {
+                                                    "type": "string",
+                                                    "example": "john.doe"
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "example": "johndoe@example.org"
+                                                },
+                                                "first_name": {
+                                                    "type": "string",
+                                                    "example": "John"
+                                                },
+                                                "last_name": {
+                                                    "type": "string",
+                                                    "example": "Doe"
+                                                },
+                                                "type": {
+                                                    "type": "string",
+                                                    "example": "MainAccount"
+                                                },
+                                                "did": {
+                                                    "type": "integer",
+                                                    "format": "int32",
+                                                    "example": "321",
+                                                    "description": "Internal DID"
+                                                },
+                                                "callerid": {
+                                                    "type": "string",
+                                                    "example": "0221123456789",
+                                                    "description": "Outgoing caller ID"
+                                                },
+                                                "primary_sip_user_id": {
+                                                    "type": "integer",
+                                                    "format": "int32",
+                                                    "example": "123"
+                                                },
+                                                "locale": {
+                                                    "type": "string",
+                                                    "example": "de",
+                                                    "enum": [
+                                                        "de",
+                                                        "en"
+                                                    ],
+                                                    "description": "Language (ISO-639-1 Code)"
+                                                },
+                                                "obfuscate_billing_records": {
+                                                    "type": "boolean",
+                                                    "example": true,
+                                                    "description": "Obfuscate billing records for this user"
+                                                },
+                                                "obfuscate_others": {
+                                                    "type": "boolean",
+                                                    "example": true,
+                                                    "description": "Obfuscate numbers not in rights_numbers for this user"
+                                                },
+                                                "admin_user": {
+                                                    "type": "boolean",
+                                                    "example": true
+                                                },
+                                                "rights_numbers": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "example": [
+                                                            "02211234589",
+                                                            "02221234589"
+                                                        ]
+                                                    }
+                                                },
+                                                "updated_at": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2018-08-14T11:42:47.000+02:00"
+                                                },
+                                                "created_at": {
+                                                    "type": "string",
+                                                    "format": "date-time",
+                                                    "example": "2018-08-16T11:42:47.000+02:00"
+                                                }
+                                            },
+                                            "description": "Fetch a list of all users of the account"
+                                        },
+                                        "mac": {
+                                            "type": "string"
+                                        },
+                                        "call_waiting": {
+                                            "type": "string"
+                                        },
+                                        "codec": {
+                                            "type": "string"
+                                        },
+                                        "locale": {
+                                            "type": "string"
+                                        },
+                                        "lines": {
+                                            "type": "object",
+                                            "properties": {
+                                                "sipuid": {
+                                                    "type": "string"
+                                                },
+                                                "position": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "keys": {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string"
+                                                },
+                                                "label": {
+                                                    "type": "string"
+                                                },
+                                                "value": {
+                                                    "type": "string"
+                                                },
+                                                "position": {
+                                                    "type": "string"
+                                                },
+                                                "extended": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "custom_configurations": {
+                                            "type": "object",
+                                            "properties": {
+                                                "key": {
+                                                    "type": "string"
+                                                },
+                                                "value": {
+                                                    "type": "string"
+                                                },
+                                                "attributes": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "device": {
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "string"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "display_name": {
+                                                    "type": "string"
+                                                },
+                                                "manufacturer": {
+                                                    "type": "string"
+                                                },
+                                                "lines": {
+                                                    "type": "string"
+                                                },
+                                                "blf_keys": {
+                                                    "type": "string"
+                                                },
+                                                "expansion_keys": {
+                                                    "type": "string"
+                                                },
+                                                "max_expansion_modules": {
+                                                    "type": "string"
+                                                },
+                                                "dect_lines": {
+                                                    "type": "string"
+                                                },
+                                                "multicell": {
+                                                    "type": "string"
+                                                },
+                                                "encryptable": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "description": "Fetch a list of all provisionable devices"
+                                        },
+                                        "encryption": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "description": "Provides a full list of all registered provisioned phones"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Provisionings"
+                ],
+                "operationId": "putProvisioningsIdCustomConfigurations"
+            }
+        },
         "/provisionings": {
             "post": {
                 "summary": "Creates a phone provisionings",
@@ -14045,6 +14496,49 @@
                     }
                 },
                 "description": "Update a subuser"
+            },
+            "postUsers": {
+                "type": "object",
+                "properties": {
+                    "first_name": {
+                        "type": "string"
+                    },
+                    "last_name": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "A subuser without email won't be able to log in to the web portal"
+                    },
+                    "did": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "callerid": {
+                        "type": "string",
+                        "description": "Phone number which will be visible in outgoing calls"
+                    },
+                    "phone_model": {
+                        "type": "string",
+                        "description": "Name of your phone. Have look at the Devices#index API endpoint"
+                    },
+                    "phone_mac": {
+                        "type": "string"
+                    },
+                    "sip_user_type": {
+                        "type": "string",
+                        "enum": [
+                            "standard",
+                            "blf"
+                        ],
+                        "default": "standard"
+                    }
+                },
+                "required": [
+                    "first_name",
+                    "last_name"
+                ],
+                "description": "Create new subuser"
             },
             "Group": {
                 "type": "object",
