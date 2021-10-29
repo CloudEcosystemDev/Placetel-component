@@ -1,0 +1,1410 @@
+{
+    "title": "Placetel API",
+    "docsUrl": "",
+    "url": "https://api.placetel.de/v2",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.placetel.de/v2",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "auth_Bearer": {
+                "label": "Authorization (Bearer)",
+                "viewClass": "TextFieldView",
+                "note": "The API key can be obtained from [here](https://web.placetel.de/settings/api#api_token)"
+            }
+        }
+    },
+    "triggers": {
+        "getNumbersNumberIdProfiles": {
+            "main": "./lib/triggers/getNumbersNumberIdProfiles.js",
+            "title": "List profiles for a number",
+            "description": "Lists all available profiles for a number ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getNumbersNumberIdProfiles.in.json",
+                "out": "./lib/schemas/getNumbersNumberIdProfiles.out.json"
+            }
+        },
+        "getNumbers": {
+            "main": "./lib/triggers/getNumbers.js",
+            "title": "Get all numbers",
+            "description": "Provides a list of all numbers",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getNumbers.in.json",
+                "out": "./lib/schemas/getNumbers.out.json"
+            }
+        },
+        "getContacts": {
+            "main": "./lib/triggers/getContacts.js",
+            "title": "Get all contacts",
+            "description": "Provides a list of all contacts",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getContacts.in.json",
+                "out": "./lib/schemas/getContacts.out.json"
+            }
+        },
+        "getFaxes": {
+            "main": "./lib/triggers/getFaxes.js",
+            "title": "Fetch in- and outbound faxes",
+            "description": "Provides a list of all faxes",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getFaxes.in.json",
+                "out": "./lib/schemas/getFaxes.out.json"
+            }
+        },
+        "getPrompts": {
+            "main": "./lib/triggers/getPrompts.js",
+            "title": "Fetch all prompts",
+            "description": "Provides a list of all prompts",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPrompts.in.json",
+                "out": "./lib/schemas/getPrompts.out.json"
+            }
+        },
+        "getSipUsersIdShortCodes": {
+            "main": "./lib/triggers/getSipUsersIdShortCodes.js",
+            "title": "Short codes",
+            "description": "List sip user short codes",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSipUsersIdShortCodes.in.json",
+                "out": "./lib/schemas/getSipUsersIdShortCodes.out.json"
+            }
+        },
+        "getSipUsers": {
+            "main": "./lib/triggers/getSipUsers.js",
+            "title": "Fetch all sip users",
+            "description": "Fetch a list of all sip users",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSipUsers.in.json",
+                "out": "./lib/schemas/getSipUsers.out.json"
+            }
+        },
+        "getSubscriptions": {
+            "main": "./lib/triggers/getSubscriptions.js",
+            "title": "List subscriptions",
+            "description": "Fetch a list of all registered subscriptions",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSubscriptions.in.json",
+                "out": "./lib/schemas/getSubscriptions.out.json"
+            }
+        },
+        "getUsers": {
+            "main": "./lib/triggers/getUsers.js",
+            "title": "Fetch all users",
+            "description": "Fetch a list of all users of the account",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getUsers.in.json",
+                "out": "./lib/schemas/getUsers.out.json"
+            }
+        },
+        "getGroups": {
+            "main": "./lib/triggers/getGroups.js",
+            "title": "Fetch all groups",
+            "description": "Fetch a list of all groups",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGroups.in.json",
+                "out": "./lib/schemas/getGroups.out.json"
+            }
+        },
+        "getRoutings": {
+            "main": "./lib/triggers/getRoutings.js",
+            "title": "Get all routings",
+            "description": "Provides a list of routing",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRoutings.in.json",
+                "out": "./lib/schemas/getRoutings.out.json"
+            }
+        },
+        "getRoutingPlansIdSimulate": {
+            "main": "./lib/triggers/getRoutingPlansIdSimulate.js",
+            "title": "Simulate the usage of a routing plan",
+            "description": "Simulate the usage of a routing plan",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRoutingPlansIdSimulate.in.json",
+                "out": "./lib/schemas/getRoutingPlansIdSimulate.out.json"
+            }
+        },
+        "getRoutingPlansIdRoutings": {
+            "main": "./lib/triggers/getRoutingPlansIdRoutings.js",
+            "title": "Get a routing plans objects",
+            "description": "Get objects for routing plan",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRoutingPlansIdRoutings.in.json",
+                "out": "./lib/schemas/getRoutingPlansIdRoutings.out.json"
+            }
+        },
+        "getRoutingPlans": {
+            "main": "./lib/triggers/getRoutingPlans.js",
+            "title": "Get all routing plans",
+            "description": "Provides a list of routing plans",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRoutingPlans.in.json",
+                "out": "./lib/schemas/getRoutingPlans.out.json"
+            }
+        },
+        "getCalls": {
+            "main": "./lib/triggers/getCalls.js",
+            "title": "Fetch all incoming calls",
+            "description": "Provides a list of all calls",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCalls.in.json",
+                "out": "./lib/schemas/getCalls.out.json"
+            }
+        },
+        "getCallDetailRecords": {
+            "main": "./lib/triggers/getCallDetailRecords.js",
+            "title": "Get call detail records",
+            "description": "Provides a list of call detail records",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCallDetailRecords.in.json",
+                "out": "./lib/schemas/getCallDetailRecords.out.json"
+            }
+        },
+        "getCallCenterCalls": {
+            "main": "./lib/triggers/getCallCenterCalls.js",
+            "title": "Fetch all call center calls",
+            "description": "Provides a list of all call center calls",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCallCenterCalls.in.json",
+                "out": "./lib/schemas/getCallCenterCalls.out.json"
+            }
+        },
+        "getCallCenterAgents": {
+            "main": "./lib/triggers/getCallCenterAgents.js",
+            "title": "Fetch all call center agents",
+            "description": "Provides a list of all call center agents",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCallCenterAgents.in.json",
+                "out": "./lib/schemas/getCallCenterAgents.out.json"
+            }
+        },
+        "getCallCenterQueues": {
+            "main": "./lib/triggers/getCallCenterQueues.js",
+            "title": "Fetch all call center queues",
+            "description": "Provides a list of all call center queues",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCallCenterQueues.in.json",
+                "out": "./lib/schemas/getCallCenterQueues.out.json"
+            }
+        },
+        "getDevices": {
+            "main": "./lib/triggers/getDevices.js",
+            "title": "Fetch all devices",
+            "description": "Fetch a list of all provisionable devices",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getDevices.in.json",
+                "out": "./lib/schemas/getDevices.out.json"
+            }
+        },
+        "getProvisionings": {
+            "main": "./lib/triggers/getProvisionings.js",
+            "title": "Get all phone provisionings",
+            "description": "Provides a full list of all registered provisioned phones",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getProvisionings.in.json",
+                "out": "./lib/schemas/getProvisionings.out.json"
+            }
+        },
+        "getRecordings": {
+            "main": "./lib/triggers/getRecordings.js",
+            "title": "Fetch call recordings",
+            "description": "Provides a list of all call recordings",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRecordings.in.json",
+                "out": "./lib/schemas/getRecordings.out.json"
+            }
+        },
+        "getMe": {
+            "main": "./lib/triggers/getMe.js",
+            "title": "Me",
+            "description": "Information about the current API user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMe.in.json",
+                "out": "./lib/schemas/getMe.out.json"
+            }
+        }
+    },
+    "actions": {
+        "deleteNumbersNumberIdProfilesId": {
+            "main": "./lib/actions/deleteNumbersNumberIdProfilesId.js",
+            "title": "Delete a profile for a number",
+            "description": "Removes the profile for a number",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteNumbersNumberIdProfilesId.in.json",
+                "out": "./lib/schemas/deleteNumbersNumberIdProfilesId.out.json"
+            }
+        },
+        "putNumbersNumberIdProfiles": {
+            "main": "./lib/actions/putNumbersNumberIdProfiles.js",
+            "title": "Activates a profile for a number",
+            "description": "Change the active profile for a number",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putNumbersNumberIdProfiles.in.json",
+                "out": "./lib/schemas/putNumbersNumberIdProfiles.out.json"
+            }
+        },
+        "postNumbersNumberIdProfiles": {
+            "main": "./lib/actions/postNumbersNumberIdProfiles.js",
+            "title": "Creates a new profile for a number",
+            "description": "Shows the active profile for a number",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postNumbersNumberIdProfiles.in.json",
+                "out": "./lib/schemas/postNumbersNumberIdProfiles.out.json"
+            }
+        },
+        "getNumbersId": {
+            "main": "./lib/actions/getNumbersId.js",
+            "title": "Retrieve a number",
+            "description": "Fetches a number by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getNumbersId.in.json",
+                "out": "./lib/schemas/getNumbersId.out.json"
+            }
+        },
+        "deleteContactsId": {
+            "main": "./lib/actions/deleteContactsId.js",
+            "title": "Deletes a contact",
+            "description": "Deletes a contact by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteContactsId.in.json",
+                "out": "./lib/schemas/deleteContactsId.out.json"
+            }
+        },
+        "putContactsId": {
+            "main": "./lib/actions/putContactsId.js",
+            "title": "Update a contact",
+            "description": "Updates a contact for a given ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putContactsId.in.json",
+                "out": "./lib/schemas/putContactsId.out.json"
+            }
+        },
+        "getContactsId": {
+            "main": "./lib/actions/getContactsId.js",
+            "title": "Retrieve a contact",
+            "description": "Fetches a contact by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getContactsId.in.json",
+                "out": "./lib/schemas/getContactsId.out.json"
+            }
+        },
+        "postContacts": {
+            "main": "./lib/actions/postContacts.js",
+            "title": "Create a contact",
+            "description": "Creates a contact",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postContacts.in.json",
+                "out": "./lib/schemas/postContacts.out.json"
+            }
+        },
+        "putCtiMac": {
+            "main": "./lib/actions/putCtiMac.js",
+            "title": "Set config params",
+            "description": "Set config params",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putCtiMac.in.json",
+                "out": "./lib/schemas/putCtiMac.out.json"
+            }
+        },
+        "getCtiMac": {
+            "main": "./lib/actions/getCtiMac.js",
+            "title": "Get config params",
+            "description": "Get config params",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCtiMac.in.json",
+                "out": "./lib/schemas/getCtiMac.out.json"
+            }
+        },
+        "postCtiMacSendDtmfDigits": {
+            "main": "./lib/actions/postCtiMacSendDtmfDigits.js",
+            "title": "Send DTMF Digits",
+            "description": "This method allows to sendDTMFDigits on a current active call.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCtiMacSendDtmfDigits.in.json",
+                "out": "./lib/schemas/postCtiMacSendDtmfDigits.out.json"
+            }
+        },
+        "postCtiMacStartTransfer": {
+            "main": "./lib/actions/postCtiMacStartTransfer.js",
+            "title": "Start transfer",
+            "description": "This method allows to initiate the tranfser on the call specified by the call_id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCtiMacStartTransfer.in.json",
+                "out": "./lib/schemas/postCtiMacStartTransfer.out.json"
+            }
+        },
+        "postCtiMacStartConference": {
+            "main": "./lib/actions/postCtiMacStartConference.js",
+            "title": "Start conference",
+            "description": "This method allows to initiate conference on the call specified by the call_id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCtiMacStartConference.in.json",
+                "out": "./lib/schemas/postCtiMacStartConference.out.json"
+            }
+        },
+        "postCtiMacResume": {
+            "main": "./lib/actions/postCtiMacResume.js",
+            "title": "Resume",
+            "description": "This method allows device to resume the call specified by the call_id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCtiMacResume.in.json",
+                "out": "./lib/schemas/postCtiMacResume.out.json"
+            }
+        },
+        "postCtiMacHold": {
+            "main": "./lib/actions/postCtiMacHold.js",
+            "title": "Hold",
+            "description": "This method allows device to hold the call specified by the call_id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCtiMacHold.in.json",
+                "out": "./lib/schemas/postCtiMacHold.out.json"
+            }
+        },
+        "postCtiMacHangup": {
+            "main": "./lib/actions/postCtiMacHangup.js",
+            "title": "Hangup",
+            "description": "This method allows device to end the call specified by the call_id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCtiMacHangup.in.json",
+                "out": "./lib/schemas/postCtiMacHangup.out.json"
+            }
+        },
+        "postCtiMacDialDigit": {
+            "main": "./lib/actions/postCtiMacDialDigit.js",
+            "title": "Dial digit",
+            "description": "This method initiates a new call.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCtiMacDialDigit.in.json",
+                "out": "./lib/schemas/postCtiMacDialDigit.out.json"
+            }
+        },
+        "postCtiMacDial": {
+            "main": "./lib/actions/postCtiMacDial.js",
+            "title": "Dial",
+            "description": "This method initiates a new call.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCtiMacDial.in.json",
+                "out": "./lib/schemas/postCtiMacDial.out.json"
+            }
+        },
+        "postCtiMacDecline": {
+            "main": "./lib/actions/postCtiMacDecline.js",
+            "title": "Decline",
+            "description": "This method allows device to Decline the call specified by the call_id. ",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCtiMacDecline.in.json",
+                "out": "./lib/schemas/postCtiMacDecline.out.json"
+            }
+        },
+        "postCtiMacCompleteTransfer": {
+            "main": "./lib/actions/postCtiMacCompleteTransfer.js",
+            "title": "Complete transfer",
+            "description": "This method allows to initiate the tranfser on the call specified by the call_id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCtiMacCompleteTransfer.in.json",
+                "out": "./lib/schemas/postCtiMacCompleteTransfer.out.json"
+            }
+        },
+        "postCtiMacCompleteConference": {
+            "main": "./lib/actions/postCtiMacCompleteConference.js",
+            "title": "Complete conference",
+            "description": "This method allows to complete conference on the call specified by the call_id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCtiMacCompleteConference.in.json",
+                "out": "./lib/schemas/postCtiMacCompleteConference.out.json"
+            }
+        },
+        "postCtiMacBlindTransfer": {
+            "main": "./lib/actions/postCtiMacBlindTransfer.js",
+            "title": "Blind transfer",
+            "description": "This method allows to do a blind tranfser on the call specified by the call_id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCtiMacBlindTransfer.in.json",
+                "out": "./lib/schemas/postCtiMacBlindTransfer.out.json"
+            }
+        },
+        "postCtiMacAnswer": {
+            "main": "./lib/actions/postCtiMacAnswer.js",
+            "title": "Answer",
+            "description": "This method allows device to answer a ringing call with given call_id.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCtiMacAnswer.in.json",
+                "out": "./lib/schemas/postCtiMacAnswer.out.json"
+            }
+        },
+        "deleteFaxesId": {
+            "main": "./lib/actions/deleteFaxesId.js",
+            "title": "Delete a fax",
+            "description": "Delete a fax by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteFaxesId.in.json",
+                "out": "./lib/schemas/deleteFaxesId.out.json"
+            }
+        },
+        "getFaxesId": {
+            "main": "./lib/actions/getFaxesId.js",
+            "title": "Fetch specific fax",
+            "description": "Fetch in- or outbound fax",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getFaxesId.in.json",
+                "out": "./lib/schemas/getFaxesId.out.json"
+            }
+        },
+        "postFaxes": {
+            "main": "./lib/actions/postFaxes.js",
+            "title": "Create outbound fax",
+            "description": "Sends faxes via API call",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postFaxes.in.json",
+                "out": "./lib/schemas/postFaxes.out.json"
+            }
+        },
+        "deletePromptsId": {
+            "main": "./lib/actions/deletePromptsId.js",
+            "title": "Delete a prompt",
+            "description": "Delete a prompt by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deletePromptsId.in.json",
+                "out": "./lib/schemas/deletePromptsId.out.json"
+            }
+        },
+        "putPromptsId": {
+            "main": "./lib/actions/putPromptsId.js",
+            "title": "Update a prompt",
+            "description": "Update a prompt by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putPromptsId.in.json",
+                "out": "./lib/schemas/putPromptsId.out.json"
+            }
+        },
+        "getPromptsId": {
+            "main": "./lib/actions/getPromptsId.js",
+            "title": "Retrieve a prompt",
+            "description": "Fetches a prompt by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPromptsId.in.json",
+                "out": "./lib/schemas/getPromptsId.out.json"
+            }
+        },
+        "postPrompts": {
+            "main": "./lib/actions/postPrompts.js",
+            "title": "Create a prompt",
+            "description": "Creates a new prompt",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postPrompts.in.json",
+                "out": "./lib/schemas/postPrompts.out.json"
+            }
+        },
+        "deleteSipUsersIdShortCodesCodeId": {
+            "main": "./lib/actions/deleteSipUsersIdShortCodesCodeId.js",
+            "title": "Delete short code",
+            "description": "Delete sip user short code",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteSipUsersIdShortCodesCodeId.in.json",
+                "out": "./lib/schemas/deleteSipUsersIdShortCodesCodeId.out.json"
+            }
+        },
+        "postSipUsersIdShortCodes": {
+            "main": "./lib/actions/postSipUsersIdShortCodes.js",
+            "title": "Create short code",
+            "description": "Create sip user short code",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postSipUsersIdShortCodes.in.json",
+                "out": "./lib/schemas/postSipUsersIdShortCodes.out.json"
+            }
+        },
+        "deleteSipUsersId": {
+            "main": "./lib/actions/deleteSipUsersId.js",
+            "title": "Delete a sip user",
+            "description": "Delete a sip user by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteSipUsersId.in.json",
+                "out": "./lib/schemas/deleteSipUsersId.out.json"
+            }
+        },
+        "putSipUsersId": {
+            "main": "./lib/actions/putSipUsersId.js",
+            "title": "Update a sip user",
+            "description": "Update a sip user by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putSipUsersId.in.json",
+                "out": "./lib/schemas/putSipUsersId.out.json"
+            }
+        },
+        "getSipUsersId": {
+            "main": "./lib/actions/getSipUsersId.js",
+            "title": "Fetch a sip user",
+            "description": "Fetch a sip users by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSipUsersId.in.json",
+                "out": "./lib/schemas/getSipUsersId.out.json"
+            }
+        },
+        "postSipUsers": {
+            "main": "./lib/actions/postSipUsers.js",
+            "title": "Create a sip user",
+            "description": "Create a new sip user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postSipUsers.in.json",
+                "out": "./lib/schemas/postSipUsers.out.json"
+            }
+        },
+        "deleteSubscriptionsId": {
+            "main": "./lib/actions/deleteSubscriptionsId.js",
+            "title": "Delete a subscription",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteSubscriptionsId.in.json",
+                "out": "./lib/schemas/deleteSubscriptionsId.out.json"
+            }
+        },
+        "putSubscriptions": {
+            "main": "./lib/actions/putSubscriptions.js",
+            "title": "Add a subscription",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putSubscriptions.in.json",
+                "out": "./lib/schemas/putSubscriptions.out.json"
+            }
+        },
+        "deleteUsersId": {
+            "main": "./lib/actions/deleteUsersId.js",
+            "title": "Delete a subuser",
+            "description": "Delete a subuser by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteUsersId.in.json",
+                "out": "./lib/schemas/deleteUsersId.out.json"
+            }
+        },
+        "putUsersId": {
+            "main": "./lib/actions/putUsersId.js",
+            "title": "Update a subuser",
+            "description": "Update an existing subuser for your account",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putUsersId.in.json",
+                "out": "./lib/schemas/putUsersId.out.json"
+            }
+        },
+        "getUsersId": {
+            "main": "./lib/actions/getUsersId.js",
+            "title": "Fetch user by ID",
+            "description": "Fetch a single user from your account by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getUsersId.in.json",
+                "out": "./lib/schemas/getUsersId.out.json"
+            }
+        },
+        "postUsersIdPasswordReset": {
+            "main": "./lib/actions/postUsersIdPasswordReset.js",
+            "title": "Reset password for account",
+            "description": "Reset password for account",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postUsersIdPasswordReset.in.json",
+                "out": "./lib/schemas/postUsersIdPasswordReset.out.json"
+            }
+        },
+        "deleteGroupsId": {
+            "main": "./lib/actions/deleteGroupsId.js",
+            "title": "Delete a group",
+            "description": "Delete a group by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteGroupsId.in.json",
+                "out": "./lib/schemas/deleteGroupsId.out.json"
+            }
+        },
+        "putGroupsId": {
+            "main": "./lib/actions/putGroupsId.js",
+            "title": "Update a group",
+            "description": "Update a group by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putGroupsId.in.json",
+                "out": "./lib/schemas/putGroupsId.out.json"
+            }
+        },
+        "getGroupsId": {
+            "main": "./lib/actions/getGroupsId.js",
+            "title": "Fetch a group",
+            "description": "Fetch a groups by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGroupsId.in.json",
+                "out": "./lib/schemas/getGroupsId.out.json"
+            }
+        },
+        "postGroups": {
+            "main": "./lib/actions/postGroups.js",
+            "title": "Create a group",
+            "description": "Create a new group",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postGroups.in.json",
+                "out": "./lib/schemas/postGroups.out.json"
+            }
+        },
+        "deleteRoutingsNumberOrId": {
+            "main": "./lib/actions/deleteRoutingsNumberOrId.js",
+            "title": "Delete a routing object",
+            "description": "Delete a routing object",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteRoutingsNumberOrId.in.json",
+                "out": "./lib/schemas/deleteRoutingsNumberOrId.out.json"
+            }
+        },
+        "putRoutingsNumberOrId": {
+            "main": "./lib/actions/putRoutingsNumberOrId.js",
+            "title": "Update routing",
+            "description": "Updates the routing object. Routing can be set to: `forward`, `group`, `plan`, `ivr`, `queue` or `api`",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putRoutingsNumberOrId.in.json",
+                "out": "./lib/schemas/putRoutingsNumberOrId.out.json"
+            }
+        },
+        "getRoutingsNumberOrId": {
+            "main": "./lib/actions/getRoutingsNumberOrId.js",
+            "title": "Retrieve routing",
+            "description": "Fetches a routing",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRoutingsNumberOrId.in.json",
+                "out": "./lib/schemas/getRoutingsNumberOrId.out.json"
+            }
+        },
+        "postRoutings": {
+            "main": "./lib/actions/postRoutings.js",
+            "title": "Create a routing object",
+            "description": "Create a routing object. Routing can be created as: `forward`, `group`, `ivr`, `queue` or `api`",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postRoutings.in.json",
+                "out": "./lib/schemas/postRoutings.out.json"
+            }
+        },
+        "deleteRoutingPlansId": {
+            "main": "./lib/actions/deleteRoutingPlansId.js",
+            "title": "Delete a routing plan",
+            "description": "Delete a routing plan",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteRoutingPlansId.in.json",
+                "out": "./lib/schemas/deleteRoutingPlansId.out.json"
+            }
+        },
+        "putRoutingPlansId": {
+            "main": "./lib/actions/putRoutingPlansId.js",
+            "title": "Update a routing plan",
+            "description": "Update a routing plan",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putRoutingPlansId.in.json",
+                "out": "./lib/schemas/putRoutingPlansId.out.json"
+            }
+        },
+        "getRoutingPlansId": {
+            "main": "./lib/actions/getRoutingPlansId.js",
+            "title": "Get a routing plan",
+            "description": "Get a routing plans",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRoutingPlansId.in.json",
+                "out": "./lib/schemas/getRoutingPlansId.out.json"
+            }
+        },
+        "postRoutingPlans": {
+            "main": "./lib/actions/postRoutingPlans.js",
+            "title": "Create a routing plan",
+            "description": "Create a routing plan",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postRoutingPlans.in.json",
+                "out": "./lib/schemas/postRoutingPlans.out.json"
+            }
+        },
+        "postCalls": {
+            "main": "./lib/actions/postCalls.js",
+            "title": "Initate a call",
+            "description": "Initates a call",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCalls.in.json",
+                "out": "./lib/schemas/postCalls.out.json"
+            }
+        },
+        "deleteCallsId": {
+            "main": "./lib/actions/deleteCallsId.js",
+            "title": "Delete a call",
+            "description": "Delete a call by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteCallsId.in.json",
+                "out": "./lib/schemas/deleteCallsId.out.json"
+            }
+        },
+        "getCallsId": {
+            "main": "./lib/actions/getCallsId.js",
+            "title": "Retrieve a call",
+            "description": "Fetches a call by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCallsId.in.json",
+                "out": "./lib/schemas/getCallsId.out.json"
+            }
+        },
+        "putCallCenterAgentsId": {
+            "main": "./lib/actions/putCallCenterAgentsId.js",
+            "title": "Update an agent",
+            "description": "Update an agent by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putCallCenterAgentsId.in.json",
+                "out": "./lib/schemas/putCallCenterAgentsId.out.json"
+            }
+        },
+        "postCallCenterAgents": {
+            "main": "./lib/actions/postCallCenterAgents.js",
+            "title": "Create an agent",
+            "description": "Create a new agent",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCallCenterAgents.in.json",
+                "out": "./lib/schemas/postCallCenterAgents.out.json"
+            }
+        },
+        "putCallCenterQueuesId": {
+            "main": "./lib/actions/putCallCenterQueuesId.js",
+            "title": "Update a queue",
+            "description": "Update a queue",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putCallCenterQueuesId.in.json",
+                "out": "./lib/schemas/putCallCenterQueuesId.out.json"
+            }
+        },
+        "postCallCenterQueues": {
+            "main": "./lib/actions/postCallCenterQueues.js",
+            "title": "Create a queue",
+            "description": "Create a queue",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCallCenterQueues.in.json",
+                "out": "./lib/schemas/postCallCenterQueues.out.json"
+            }
+        },
+        "postSms": {
+            "main": "./lib/actions/postSms.js",
+            "title": "Send SMS",
+            "description": "Sends an SMS",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postSms.in.json",
+                "out": "./lib/schemas/postSms.out.json"
+            }
+        },
+        "deleteProvisioningsId": {
+            "main": "./lib/actions/deleteProvisioningsId.js",
+            "title": "Delete a phone provisionings",
+            "description": "Delete a phone provisioning",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteProvisioningsId.in.json",
+                "out": "./lib/schemas/deleteProvisioningsId.out.json"
+            }
+        },
+        "putProvisioningsId": {
+            "main": "./lib/actions/putProvisioningsId.js",
+            "title": "Update a phone provisionings",
+            "description": "Updates a phone provisioning",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/putProvisioningsId.in.json",
+                "out": "./lib/schemas/putProvisioningsId.out.json"
+            }
+        },
+        "getProvisioningsId": {
+            "main": "./lib/actions/getProvisioningsId.js",
+            "title": "Retrieve a phone provisionings",
+            "description": "Fetches a phone provisioning by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getProvisioningsId.in.json",
+                "out": "./lib/schemas/getProvisioningsId.out.json"
+            }
+        },
+        "postProvisioningsIdReconfigure": {
+            "main": "./lib/actions/postProvisioningsIdReconfigure.js",
+            "title": "Trigger reconfiguration of a phone",
+            "description": "This sends a SIP command to the user on line 1 to fetch configuration changes.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postProvisioningsIdReconfigure.in.json",
+                "out": "./lib/schemas/postProvisioningsIdReconfigure.out.json"
+            }
+        },
+        "postProvisionings": {
+            "main": "./lib/actions/postProvisionings.js",
+            "title": "Creates a phone provisionings",
+            "description": "Creates a phone provisioning",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/postProvisionings.in.json",
+                "out": "./lib/schemas/postProvisionings.out.json"
+            }
+        },
+        "deleteRecordingsId": {
+            "main": "./lib/actions/deleteRecordingsId.js",
+            "title": "Delete a recording",
+            "description": "Delete a recording by its ID",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteRecordingsId.in.json",
+                "out": "./lib/schemas/deleteRecordingsId.out.json"
+            }
+        },
+        "getRecordingsId": {
+            "main": "./lib/actions/getRecordingsId.js",
+            "title": "Fetch specific recording",
+            "description": "Fetch recording",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRecordingsId.in.json",
+                "out": "./lib/schemas/getRecordingsId.out.json"
+            }
+        }
+    }
+}
