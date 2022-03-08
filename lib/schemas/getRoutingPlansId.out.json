@@ -35,5 +35,6 @@
             "format": "date-time",
             "example": "2018-08-14T11:42:47.000+02:00"
         }
-    }
+    },
+    "description": "RoutingPlan model"
 }

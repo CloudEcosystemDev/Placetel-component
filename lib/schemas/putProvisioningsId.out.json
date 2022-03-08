@@ -39,12 +39,12 @@
                     "type": "integer",
                     "format": "int32",
                     "example": "321",
-                    "description": "Internal DID"
+                    "description": "Internal DID of primary SIP user"
                 },
                 "callerid": {
                     "type": "string",
                     "example": "0221123456789",
-                    "description": "Outgoing caller ID"
+                    "description": "Outgoing caller ID of primary SIP user"
                 },
                 "primary_sip_user_id": {
                     "type": "integer",
@@ -95,7 +95,7 @@
                     "example": "2018-08-16T11:42:47.000+02:00"
                 }
             },
-            "description": "Fetch a list of all users of the account"
+            "description": "User model"
         },
         "mac": {
             "type": "string"
@@ -143,6 +143,9 @@
         "custom_configurations": {
             "type": "object",
             "properties": {
+                "id": {
+                    "type": "string"
+                },
                 "key": {
                     "type": "string"
                 },
@@ -152,7 +155,8 @@
                 "attributes": {
                     "type": "string"
                 }
-            }
+            },
+            "description": "CustomConfiguration model"
         },
         "device": {
             "type": "object",
@@ -191,10 +195,11 @@
                     "type": "string"
                 }
             },
-            "description": "Fetch a list of all provisionable devices"
+            "description": "Device model"
         },
         "encryption": {
             "type": "string"
         }
-    }
+    },
+    "description": "Provisioning model"
 }

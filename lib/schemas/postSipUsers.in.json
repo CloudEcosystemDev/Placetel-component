@@ -36,7 +36,8 @@
                     "enum": [
                         true,
                         false
-                    ]
+                    ],
+                    "example": true
                 },
                 "automatic_prefix": {
                     "type": "string"

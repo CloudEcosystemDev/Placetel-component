@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "value": {
+            "type": "string"
+        },
+        "attributes": {
+            "type": "string"
+        }
+    },
+    "description": "CustomConfiguration model"
+}

@@ -1,6 +1,24 @@
 {
     "type": "object",
     "properties": {
+        "filter[type]": {
+            "required": false,
+            "type": "string",
+            "enum": [
+                "inbound,outbound",
+                "inbound",
+                "outbound"
+            ],
+            "default": "inbound,outbound"
+        },
+        "filter[from_number]": {
+            "required": false,
+            "type": "string"
+        },
+        "filter[to_number]": {
+            "required": false,
+            "type": "string"
+        },
         "order": {
             "required": false,
             "type": "string",
@@ -23,24 +41,6 @@
             "minimum": 0,
             "maximum": 100,
             "default": 25
-        },
-        "filter_type_": {
-            "required": false,
-            "type": "string",
-            "enum": [
-                "inbound,outbound",
-                "inbound",
-                "outbound"
-            ],
-            "default": "inbound,outbound"
-        },
-        "filter_from_number_": {
-            "required": false,
-            "type": "string"
-        },
-        "filter_to_number_": {
-            "required": false,
-            "type": "string"
         }
     }
 }

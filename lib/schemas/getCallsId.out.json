@@ -78,7 +78,7 @@
                             "example": "2018-08-16T11:42:47.000+02:00"
                         }
                     },
-                    "description": "Provides a list of all numbers"
+                    "description": "Number model"
                 }
             }
         },
@@ -202,12 +202,21 @@
                     "example": "2018-08-16T11:42:47.000+02:00"
                 }
             },
-            "description": "Provides a list of all contacts"
+            "description": "Contact model"
         },
         "received_at": {
             "type": "string",
             "format": "date-time",
             "example": "2018-08-16T11:42:47.000+02:00"
+        },
+        "unread": {
+            "type": "boolean",
+            "example": true,
+            "enum": [
+                true,
+                false
+            ]
         }
-    }
+    },
+    "description": "Call model"
 }

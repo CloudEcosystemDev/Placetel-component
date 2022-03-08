@@ -18,9 +18,19 @@
                     "type": "integer",
                     "format": "int32"
                 },
+                "assign_did": {
+                    "type": "boolean",
+                    "description": "Auto assign DID",
+                    "enum": [
+                        true,
+                        false
+                    ],
+                    "default": false
+                },
                 "callerid": {
                     "type": "string",
-                    "description": "Phone number which will be visible in outgoing calls"
+                    "description": "Phone number which will be visible in outgoing calls",
+                    "default": ""
                 },
                 "phone_model": {
                     "type": "string",

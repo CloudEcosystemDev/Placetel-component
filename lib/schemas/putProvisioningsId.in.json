@@ -21,7 +21,8 @@
                     "enum": [
                         "G711a",
                         "G729a",
-                        "G722"
+                        "G722",
+                        "OPUS"
                     ]
                 },
                 "call_waiting": {
@@ -29,7 +30,8 @@
                     "enum": [
                         true,
                         false
-                    ]
+                    ],
+                    "example": true
                 },
                 "encryption": {
                     "type": "string"
@@ -55,7 +57,18 @@
                         "type": "object",
                         "properties": {
                             "type": {
-                                "type": "string"
+                                "type": "string",
+                                "enum": [
+                                    "blf",
+                                    "line",
+                                    "none",
+                                    "dtmf",
+                                    "speeddial",
+                                    "manual",
+                                    "redirect",
+                                    "keyevent",
+                                    "url"
+                                ]
                             },
                             "value": {
                                 "type": "string"

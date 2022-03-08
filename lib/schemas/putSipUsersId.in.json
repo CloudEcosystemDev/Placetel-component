@@ -31,7 +31,8 @@
                     "enum": [
                         true,
                         false
-                    ]
+                    ],
+                    "example": true
                 },
                 "p_asserted_identity": {
                     "type": "string"

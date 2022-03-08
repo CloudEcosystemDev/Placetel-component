@@ -1,4 +1,42 @@
 {
-    "type": "object",
-    "properties": {}
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string"
+            },
+            "name": {
+                "type": "string"
+            },
+            "display_name": {
+                "type": "string"
+            },
+            "manufacturer": {
+                "type": "string"
+            },
+            "lines": {
+                "type": "string"
+            },
+            "blf_keys": {
+                "type": "string"
+            },
+            "expansion_keys": {
+                "type": "string"
+            },
+            "max_expansion_modules": {
+                "type": "string"
+            },
+            "dect_lines": {
+                "type": "string"
+            },
+            "multicell": {
+                "type": "string"
+            },
+            "encryptable": {
+                "type": "string"
+            }
+        },
+        "description": "Device model"
+    }
 }

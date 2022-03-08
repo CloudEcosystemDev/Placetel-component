@@ -1,36 +1,40 @@
 {
-    "type": "object",
-    "properties": {
-        "amount": {
-            "type": "number",
-            "format": "float",
-            "example": 1.42
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "amount": {
+                "type": "number",
+                "format": "float",
+                "example": 1.42
+            },
+            "description": {
+                "type": "string",
+                "example": "Weiterleitung auf SIP"
+            },
+            "from": {
+                "type": "string",
+                "example": "022129191999"
+            },
+            "to": {
+                "type": "string",
+                "example": "022129191999"
+            },
+            "length": {
+                "type": "integer",
+                "format": "int32",
+                "example": 42
+            },
+            "answer_uri": {
+                "type": "string",
+                "example": "77712345678"
+            },
+            "received_at": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2018-08-16T11:42:47.000+02:00"
+            }
         },
-        "description": {
-            "type": "string",
-            "example": "Weiterleitung auf SIP"
-        },
-        "from": {
-            "type": "string",
-            "example": "022129191999"
-        },
-        "to": {
-            "type": "string",
-            "example": "022129191999"
-        },
-        "length": {
-            "type": "integer",
-            "format": "int32",
-            "example": 42
-        },
-        "answer_uri": {
-            "type": "string",
-            "example": "77712345678"
-        },
-        "received_at": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2018-08-16T11:42:47.000+02:00"
-        }
+        "description": "CallDetailRecord model"
     }
 }

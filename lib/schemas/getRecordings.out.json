@@ -1,51 +1,55 @@
 {
-    "type": "object",
-    "properties": {
-        "id": {
-            "type": "integer",
-            "format": "int32",
-            "example": 1
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "integer",
+                "format": "int32",
+                "example": 1
+            },
+            "transcript": {
+                "type": "string",
+                "example": "This is my transcript"
+            },
+            "direction": {
+                "type": "string",
+                "example": "in"
+            },
+            "from": {
+                "type": "string",
+                "example": "+4922129191999"
+            },
+            "to": {
+                "type": "string",
+                "example": "+4922129191999"
+            },
+            "duration": {
+                "type": "integer",
+                "format": "int32",
+                "example": 15
+            },
+            "time": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2018-08-16T11:42:47.000+02:00"
+            },
+            "file": {
+                "type": "string",
+                "format": "uri",
+                "example": "https://example.org/recording.mp3"
+            },
+            "updated_at": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2018-08-16T11:42:47.000+02:00"
+            },
+            "created_at": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2018-08-16T11:42:47.000+02:00"
+            }
         },
-        "transcript": {
-            "type": "string",
-            "example": "This is my transcript"
-        },
-        "direction": {
-            "type": "string",
-            "example": "in"
-        },
-        "from": {
-            "type": "string",
-            "example": "+4922129191999"
-        },
-        "to": {
-            "type": "string",
-            "example": "+4922129191999"
-        },
-        "duration": {
-            "type": "integer",
-            "format": "int32",
-            "example": 15
-        },
-        "time": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2018-08-16T11:42:47.000+02:00"
-        },
-        "file": {
-            "type": "string",
-            "format": "uri",
-            "example": "https://example.org/recording.mp3"
-        },
-        "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2018-08-16T11:42:47.000+02:00"
-        },
-        "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2018-08-16T11:42:47.000+02:00"
-        }
+        "description": "Recording model"
     }
 }

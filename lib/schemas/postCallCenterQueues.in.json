@@ -22,7 +22,8 @@
                     "type": "string"
                 },
                 "mail_notification": {
-                    "type": "string"
+                    "type": "string",
+                    "default": ""
                 },
                 "ringing_time": {
                     "type": "integer",
@@ -39,48 +40,60 @@
                     "enum": [
                         true,
                         false
-                    ]
+                    ],
+                    "default": false,
+                    "example": true
                 },
                 "prompt_id": {
                     "type": "integer",
                     "format": "int32",
-                    "description": "ID of a prompt"
+                    "description": "ID of a prompt",
+                    "example": 123
                 },
                 "play_prompt_waiting": {
                     "type": "boolean",
                     "enum": [
                         true,
                         false
-                    ]
+                    ],
+                    "default": false,
+                    "example": true
                 },
                 "prompt_waiting_id": {
                     "type": "integer",
                     "format": "int32",
-                    "description": "ID of a prompt"
+                    "description": "ID of a prompt",
+                    "example": 123
                 },
                 "play_prompt_end": {
                     "type": "boolean",
                     "enum": [
                         true,
                         false
-                    ]
+                    ],
+                    "default": false,
+                    "example": true
                 },
                 "prompt_end_id": {
                     "type": "integer",
                     "format": "int32",
-                    "description": "ID of a prompt"
+                    "description": "ID of a prompt",
+                    "example": 123
                 },
                 "play_mailbox": {
                     "type": "boolean",
                     "enum": [
                         true,
                         false
-                    ]
+                    ],
+                    "default": false,
+                    "example": true
                 },
                 "prompt_mailbox_id": {
                     "type": "integer",
                     "format": "int32",
-                    "description": "ID of a prompt"
+                    "description": "ID of a prompt",
+                    "example": 123
                 }
             },
             "required": [

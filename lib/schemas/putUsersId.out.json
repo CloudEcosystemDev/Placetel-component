@@ -30,12 +30,12 @@
             "type": "integer",
             "format": "int32",
             "example": "321",
-            "description": "Internal DID"
+            "description": "Internal DID of primary SIP user"
         },
         "callerid": {
             "type": "string",
             "example": "0221123456789",
-            "description": "Outgoing caller ID"
+            "description": "Outgoing caller ID of primary SIP user"
         },
         "primary_sip_user_id": {
             "type": "integer",
@@ -85,5 +85,6 @@
             "format": "date-time",
             "example": "2018-08-16T11:42:47.000+02:00"
         }
-    }
+    },
+    "description": "User model"
 }

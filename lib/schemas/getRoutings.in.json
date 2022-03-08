@@ -1,6 +1,16 @@
 {
     "type": "object",
     "properties": {
+        "filter[updated_at_gte]": {
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+        },
+        "filter[updated_at_lte]": {
+            "required": false,
+            "type": "string",
+            "format": "date-time"
+        },
         "page": {
             "required": false,
             "type": "integer",
@@ -14,16 +24,6 @@
             "minimum": 0,
             "maximum": 100,
             "default": 25
-        },
-        "filter_updated_at_gte_": {
-            "required": false,
-            "type": "string",
-            "format": "date-time"
-        },
-        "filter_updated_at_lte_": {
-            "required": false,
-            "type": "string",
-            "format": "date-time"
         }
     }
 }

@@ -10,25 +10,22 @@
             "type": "object",
             "properties": {
                 "configurations": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "key": {
-                                "type": "string"
-                            },
-                            "value": {
-                                "type": "string"
-                            },
-                            "attributes": {
-                                "type": "string"
-                            }
+                    "type": "object",
+                    "properties": {
+                        "key": {
+                            "type": "string"
                         },
-                        "required": [
-                            "key",
-                            "value"
-                        ]
-                    }
+                        "value": {
+                            "type": "string"
+                        },
+                        "attributes": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "key",
+                        "value"
+                    ]
                 }
             },
             "required": [

@@ -18,11 +18,13 @@
                 },
                 "extension_sip": {
                     "type": "string",
-                    "description": "SIP extension of the agent"
+                    "description": "SIP extension of the agent",
+                    "example": "xxx@fpbx.de"
                 },
                 "extension_pstn": {
                     "type": "string",
-                    "description": "PSTN extension of the agent"
+                    "description": "PSTN extension of the agent",
+                    "example": "+492219998888777"
                 },
                 "agent_type": {
                     "type": "string",

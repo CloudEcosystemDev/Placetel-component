@@ -67,7 +67,8 @@
                     "enum": [
                         true,
                         false
-                    ]
+                    ],
+                    "example": true
                 }
             },
             "description": "Create a contact"

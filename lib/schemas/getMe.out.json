@@ -28,6 +28,16 @@
             "type": "string",
             "example": "PROFI"
         },
+        "rights_numbers": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "example": [
+                    "02211234589",
+                    "02221234589"
+                ]
+            }
+        },
         "updated_at": {
             "type": "string",
             "format": "date-time",
@@ -38,5 +48,6 @@
             "format": "date-time",
             "example": "2018-08-16T11:42:47.000+02:00"
         }
-    }
+    },
+    "description": "Me model"
 }

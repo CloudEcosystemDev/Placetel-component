@@ -10,14 +10,15 @@
             "type": "object",
             "properties": {
                 "id": {
-                    "description": "Profile ID",
                     "type": "integer",
-                    "format": "int32"
+                    "format": "int32",
+                    "description": "Profile ID"
                 }
             },
             "required": [
                 "id"
-            ]
+            ],
+            "description": "Activates a profile for a number"
         }
     }
 }

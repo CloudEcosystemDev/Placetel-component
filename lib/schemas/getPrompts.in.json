@@ -1,6 +1,14 @@
 {
     "type": "object",
     "properties": {
+        "filter[name]": {
+            "required": false,
+            "type": "string"
+        },
+        "filter[description]": {
+            "required": false,
+            "type": "string"
+        },
         "page": {
             "required": false,
             "type": "integer",
@@ -14,14 +22,6 @@
             "minimum": 0,
             "maximum": 100,
             "default": 25
-        },
-        "filter_name_": {
-            "required": false,
-            "type": "string"
-        },
-        "filter_description_": {
-            "required": false,
-            "type": "string"
         }
     }
 }

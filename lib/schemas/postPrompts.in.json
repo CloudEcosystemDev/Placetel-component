@@ -14,11 +14,29 @@
                 },
                 "text": {
                     "type": "string",
-                    "description": "Text used to synthezize the prompt"
+                    "description": "Text used to synthesize the prompt"
                 },
                 "voice": {
                     "type": "string",
-                    "description": "Voice used to synthezize the prompt"
+                    "description": "Voice used to synthesize the prompt",
+                    "enum": [
+                        "de-DE-Wavenet-B",
+                        "de-DE-Wavenet-F",
+                        "en-GB-Standard-A",
+                        "en-GB-Standard-B",
+                        "en-US-Wavenet-A",
+                        "en-US-Wavenet-C",
+                        "es-ES-Standard-A",
+                        "fr-FR-Wavenet-A",
+                        "fr-FR-Wavenet-B",
+                        "it-IT-Wavenet-A",
+                        "ja-JP-Wavenet-A",
+                        "ko-KR-Standard-A",
+                        "nl-NL-Wavenet-A",
+                        "pt-BR-Standard-A",
+                        "sv-SE-Standard-A",
+                        "tr-TR-Standard-A"
+                    ]
                 },
                 "file": {
                     "type": "string",
