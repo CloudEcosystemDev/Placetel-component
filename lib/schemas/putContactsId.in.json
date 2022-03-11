@@ -72,7 +72,8 @@
                     "enum": [
                         true,
                         false
-                    ]
+                    ],
+                    "example": true
                 }
             },
             "description": "Update a contact"

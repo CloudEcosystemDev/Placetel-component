@@ -1,6 +1,60 @@
 {
     "type": "object",
     "properties": {
+        "filter[speeddial]": {
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+        },
+        "filter[first_name]": {
+            "required": false,
+            "type": "string"
+        },
+        "filter[last_name]": {
+            "required": false,
+            "type": "string"
+        },
+        "filter[company]": {
+            "required": false,
+            "type": "string"
+        },
+        "filter[email]": {
+            "required": false,
+            "type": "string"
+        },
+        "filter[email_work]": {
+            "required": false,
+            "type": "string"
+        },
+        "filter[phone_work]": {
+            "required": false,
+            "type": "string"
+        },
+        "filter[mobile_work]": {
+            "required": false,
+            "type": "string"
+        },
+        "filter[phone]": {
+            "required": false,
+            "type": "string"
+        },
+        "filter[mobile]": {
+            "required": false,
+            "type": "string"
+        },
+        "filter[blocked]": {
+            "required": false,
+            "type": "boolean",
+            "enum": [
+                true,
+                false
+            ],
+            "default": false
+        },
+        "search[number]": {
+            "required": false,
+            "type": "string"
+        },
         "page": {
             "required": false,
             "type": "integer",
@@ -14,59 +68,6 @@
             "minimum": 0,
             "maximum": 100,
             "default": 25
-        },
-        "filter_speeddial_": {
-            "required": false,
-            "type": "integer",
-            "format": "int32"
-        },
-        "filter_first_name_": {
-            "required": false,
-            "type": "string"
-        },
-        "filter_last_name_": {
-            "required": false,
-            "type": "string"
-        },
-        "filter_company_": {
-            "required": false,
-            "type": "string"
-        },
-        "filter_email_": {
-            "required": false,
-            "type": "string"
-        },
-        "filter_email_work_": {
-            "required": false,
-            "type": "string"
-        },
-        "filter_phone_work_": {
-            "required": false,
-            "type": "string"
-        },
-        "filter_mobile_work_": {
-            "required": false,
-            "type": "string"
-        },
-        "filter_phone_": {
-            "required": false,
-            "type": "string"
-        },
-        "filter_mobile_": {
-            "required": false,
-            "type": "string"
-        },
-        "filter_blocked_": {
-            "required": false,
-            "type": "boolean",
-            "enum": [
-                true,
-                false
-            ]
-        },
-        "search_number_": {
-            "required": false,
-            "type": "string"
         }
     }
 }

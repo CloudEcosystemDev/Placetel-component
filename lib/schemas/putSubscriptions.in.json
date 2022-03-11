@@ -5,10 +5,12 @@
             "type": "object",
             "properties": {
                 "service": {
-                    "type": "string"
+                    "type": "string",
+                    "description": ""
                 },
                 "url": {
-                    "type": "string"
+                    "type": "string",
+                    "description": ""
                 },
                 "incoming": {
                     "type": "boolean",
@@ -16,7 +18,9 @@
                     "enum": [
                         true,
                         false
-                    ]
+                    ],
+                    "default": false,
+                    "example": true
                 },
                 "outgoing": {
                     "type": "boolean",
@@ -24,7 +28,9 @@
                     "enum": [
                         true,
                         false
-                    ]
+                    ],
+                    "default": false,
+                    "example": true
                 },
                 "hungup": {
                     "type": "boolean",
@@ -32,7 +38,9 @@
                     "enum": [
                         true,
                         false
-                    ]
+                    ],
+                    "default": false,
+                    "example": true
                 },
                 "accepted": {
                     "type": "boolean",
@@ -40,7 +48,9 @@
                     "enum": [
                         true,
                         false
-                    ]
+                    ],
+                    "default": false,
+                    "example": true
                 },
                 "phone": {
                     "type": "boolean",
@@ -48,7 +58,9 @@
                     "enum": [
                         true,
                         false
-                    ]
+                    ],
+                    "default": false,
+                    "example": true
                 },
                 "numbers": {
                     "type": "array",

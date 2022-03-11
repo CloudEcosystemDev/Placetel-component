@@ -73,7 +73,7 @@
                     "example": "2018-08-14T11:42:47.000+02:00"
                 }
             },
-            "description": "Provides a list of all prompts"
+            "description": "Prompt model"
         },
         "play_prompt_waiting": {
             "type": "string",
@@ -115,7 +115,7 @@
                     "example": "2018-08-14T11:42:47.000+02:00"
                 }
             },
-            "description": "Provides a list of all prompts"
+            "description": "Prompt model"
         },
         "play_prompt_end": {
             "type": "string",
@@ -157,7 +157,7 @@
                     "example": "2018-08-14T11:42:47.000+02:00"
                 }
             },
-            "description": "Provides a list of all prompts"
+            "description": "Prompt model"
         },
         "play_mailbox": {
             "type": "string",
@@ -199,7 +199,7 @@
                     "example": "2018-08-14T11:42:47.000+02:00"
                 }
             },
-            "description": "Provides a list of all prompts"
+            "description": "Prompt model"
         },
         "updated_at": {
             "type": "string",
@@ -211,5 +211,6 @@
             "format": "date-time",
             "example": "2018-08-16T11:42:47.000+02:00"
         }
-    }
+    },
+    "description": "CallCenterQueue model"
 }

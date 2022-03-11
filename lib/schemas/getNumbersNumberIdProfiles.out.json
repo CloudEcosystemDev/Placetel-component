@@ -23,5 +23,6 @@
                 false
             ]
         }
-    }
+    },
+    "description": "Profile model"
 }

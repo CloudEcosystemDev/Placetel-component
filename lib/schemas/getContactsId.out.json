@@ -108,5 +108,6 @@
             "format": "date-time",
             "example": "2018-08-16T11:42:47.000+02:00"
         }
-    }
+    },
+    "description": "Contact model"
 }

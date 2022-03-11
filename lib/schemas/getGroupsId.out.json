@@ -122,12 +122,12 @@
                                 "type": "integer",
                                 "format": "int32",
                                 "example": "321",
-                                "description": "Internal DID"
+                                "description": "Internal DID of primary SIP user"
                             },
                             "callerid": {
                                 "type": "string",
                                 "example": "0221123456789",
-                                "description": "Outgoing caller ID"
+                                "description": "Outgoing caller ID of primary SIP user"
                             },
                             "primary_sip_user_id": {
                                 "type": "integer",
@@ -178,7 +178,7 @@
                                 "example": "2018-08-16T11:42:47.000+02:00"
                             }
                         },
-                        "description": "Fetch a list of all users of the account"
+                        "description": "User model"
                     },
                     "automatic_prefix": {
                         "type": "string",
@@ -242,7 +242,7 @@
                         "example": "2018-08-16T11:42:47.000+02:00"
                     }
                 },
-                "description": "Fetch a list of all sip users"
+                "description": "SipUser model"
             }
         },
         "updated_at": {
@@ -255,5 +255,6 @@
             "format": "date-time",
             "example": "2018-08-16T11:42:47.000+02:00"
         }
-    }
+    },
+    "description": "Group model"
 }

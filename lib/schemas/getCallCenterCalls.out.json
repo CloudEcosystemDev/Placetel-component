@@ -1,69 +1,73 @@
 {
-    "type": "object",
-    "properties": {
-        "call_type": {
-            "type": "string",
-            "example": "dail_in",
-            "enum": [
-                "dail_in",
-                "dail_out"
-            ]
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "call_type": {
+                "type": "string",
+                "example": "dail_in",
+                "enum": [
+                    "dail_in",
+                    "dail_out"
+                ]
+            },
+            "call_status": {
+                "type": "string",
+                "example": "unassigned",
+                "enum": [
+                    "unassigned",
+                    "assigned",
+                    "ended",
+                    "not_answered",
+                    "cancelled",
+                    "dail_out"
+                ]
+            },
+            "answer_status": {
+                "type": "string",
+                "example": "ANSWER"
+            },
+            "started_at": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2018-08-16T11:42:47.000+02:00"
+            },
+            "left_queue_at": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2018-08-16T11:42:47.000+02:00"
+            },
+            "ended_at": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2018-08-16T11:42:47.000+02:00"
+            },
+            "last_updated_at": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2018-08-16T11:42:47.000+02:00"
+            },
+            "iteration": {
+                "type": "string",
+                "example": 1
+            },
+            "from": {
+                "type": "string",
+                "example": "022129191999"
+            },
+            "to": {
+                "type": "string",
+                "example": "022129191999"
+            },
+            "queue_name": {
+                "type": "string",
+                "example": "Queue for Quentin"
+            },
+            "agent_name": {
+                "type": "string",
+                "example": "Agent Orange"
+            }
         },
-        "call_status": {
-            "type": "string",
-            "example": "unassigned",
-            "enum": [
-                "unassigned",
-                "assigned",
-                "ended",
-                "not_answered",
-                "cancelled",
-                "dail_out"
-            ]
-        },
-        "answer_status": {
-            "type": "string",
-            "example": "ANSWER"
-        },
-        "started_at": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2018-08-16T11:42:47.000+02:00"
-        },
-        "left_queue_at": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2018-08-16T11:42:47.000+02:00"
-        },
-        "ended_at": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2018-08-16T11:42:47.000+02:00"
-        },
-        "last_updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2018-08-16T11:42:47.000+02:00"
-        },
-        "iteration": {
-            "type": "string",
-            "example": 1
-        },
-        "from": {
-            "type": "string",
-            "example": "022129191999"
-        },
-        "to": {
-            "type": "string",
-            "example": "022129191999"
-        },
-        "queue_name": {
-            "type": "string",
-            "example": "Queue for Quentin"
-        },
-        "agent_name": {
-            "type": "string",
-            "example": "Agent Orange"
-        }
+        "description": "CallCenterCall model"
     }
 }

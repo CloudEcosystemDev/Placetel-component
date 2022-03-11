@@ -11,6 +11,45 @@
                 "forward": {
                     "type": "object",
                     "properties": {
+                        "destinations": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "targets": {
+                                        "type": "array",
+                                        "description": "sipuid of a sipuser or external phone number",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "ringing_time": {
+                                        "type": "integer",
+                                        "format": "int32",
+                                        "enum": [
+                                            120,
+                                            110,
+                                            100,
+                                            90,
+                                            80,
+                                            70,
+                                            60,
+                                            50,
+                                            40,
+                                            30,
+                                            25,
+                                            20,
+                                            15,
+                                            10
+                                        ],
+                                        "default": 60
+                                    }
+                                },
+                                "required": [
+                                    "targets"
+                                ]
+                            }
+                        },
                         "behaviour": {
                             "type": "string",
                             "enum": [
@@ -23,40 +62,10 @@
                         "prompt_id": {
                             "type": "integer",
                             "format": "int32"
-                        },
-                        "destinations": {
-                            "type": "array",
-                            "items": {
-                                "type": "object",
-                                "properties": {
-                                    "targets": {
-                                        "type": "string",
-                                        "description": "sipuid of a sipuser or external phone number"
-                                    },
-                                    "ringing_time": {
-                                        "type": "integer",
-                                        "format": "int32"
-                                    }
-                                },
-                                "required": [
-                                    "targets"
-                                ]
-                            }
                         }
-                    }
-                },
-                "music_on_hold": {
-                    "type": "boolean",
-                    "enum": [
-                        true,
-                        false
-                    ]
-                },
-                "notify_external_api": {
-                    "type": "boolean",
-                    "enum": [
-                        true,
-                        false
+                    },
+                    "required": [
+                        "destinations"
                     ]
                 },
                 "group": {
@@ -184,7 +193,8 @@
                             "enum": [
                                 true,
                                 false
-                            ]
+                            ],
+                            "example": true
                         },
                         "greeting_id": {
                             "type": "integer",
@@ -195,7 +205,8 @@
                             "enum": [
                                 true,
                                 false
-                            ]
+                            ],
+                            "example": true
                         }
                     }
                 },
@@ -206,7 +217,8 @@
                             "type": "string"
                         },
                         "email": {
-                            "type": "string"
+                            "type": "string",
+                            "example": "admin@example.org"
                         },
                         "type": {
                             "type": "string",
@@ -234,7 +246,8 @@
                             "enum": [
                                 true,
                                 false
-                            ]
+                            ],
+                            "example": true
                         },
                         "mon": {
                             "type": "boolean",
@@ -242,7 +255,8 @@
                             "enum": [
                                 true,
                                 false
-                            ]
+                            ],
+                            "example": true
                         },
                         "tue": {
                             "type": "boolean",
@@ -250,7 +264,8 @@
                             "enum": [
                                 true,
                                 false
-                            ]
+                            ],
+                            "example": true
                         },
                         "wed": {
                             "type": "boolean",
@@ -258,7 +273,8 @@
                             "enum": [
                                 true,
                                 false
-                            ]
+                            ],
+                            "example": true
                         },
                         "thu": {
                             "type": "boolean",
@@ -266,7 +282,8 @@
                             "enum": [
                                 true,
                                 false
-                            ]
+                            ],
+                            "example": true
                         },
                         "fri": {
                             "type": "boolean",
@@ -274,7 +291,8 @@
                             "enum": [
                                 true,
                                 false
-                            ]
+                            ],
+                            "example": true
                         },
                         "sat": {
                             "type": "boolean",
@@ -282,7 +300,8 @@
                             "enum": [
                                 true,
                                 false
-                            ]
+                            ],
+                            "example": true
                         },
                         "sun": {
                             "type": "boolean",
@@ -290,7 +309,8 @@
                             "enum": [
                                 true,
                                 false
-                            ]
+                            ],
+                            "example": true
                         },
                         "extended_time_settings": {
                             "type": "boolean",
@@ -298,7 +318,8 @@
                             "enum": [
                                 true,
                                 false
-                            ]
+                            ],
+                            "example": true
                         },
                         "time_from": {
                             "type": "string",
@@ -326,7 +347,8 @@
                             "enum": [
                                 true,
                                 false
-                            ]
+                            ],
+                            "example": true
                         },
                         "callerid_name": {
                             "type": "string"
@@ -335,6 +357,22 @@
                             "type": "string"
                         }
                     }
+                },
+                "music_on_hold": {
+                    "type": "boolean",
+                    "enum": [
+                        true,
+                        false
+                    ],
+                    "example": true
+                },
+                "notify_external_api": {
+                    "type": "boolean",
+                    "enum": [
+                        true,
+                        false
+                    ],
+                    "example": true
                 }
             },
             "required": [

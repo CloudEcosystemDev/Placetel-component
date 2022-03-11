@@ -1,6 +1,30 @@
 {
     "type": "object",
     "properties": {
+        "filter[prefix]": {
+            "required": false,
+            "type": "string"
+        },
+        "filter[number]": {
+            "required": false,
+            "type": "string"
+        },
+        "filter[activated]": {
+            "required": false,
+            "type": "boolean",
+            "enum": [
+                true,
+                false
+            ]
+        },
+        "filter[name]": {
+            "required": false,
+            "type": "string"
+        },
+        "filter[description]": {
+            "required": false,
+            "type": "string"
+        },
         "page": {
             "required": false,
             "type": "integer",
@@ -14,30 +38,6 @@
             "minimum": 0,
             "maximum": 100,
             "default": 25
-        },
-        "filter_prefix_": {
-            "required": false,
-            "type": "string"
-        },
-        "filter_number_": {
-            "required": false,
-            "type": "string"
-        },
-        "filter_activated_": {
-            "required": false,
-            "type": "boolean",
-            "enum": [
-                true,
-                false
-            ]
-        },
-        "filter_name_": {
-            "required": false,
-            "type": "string"
-        },
-        "filter_description_": {
-            "required": false,
-            "type": "string"
         }
     }
 }

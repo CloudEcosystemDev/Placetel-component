@@ -1,73 +1,77 @@
 {
-    "type": "object",
-    "properties": {
-        "id": {
-            "type": "integer",
-            "format": "int32",
-            "example": 1
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "integer",
+                "format": "int32",
+                "example": 1
+            },
+            "name": {
+                "type": "string",
+                "example": "John"
+            },
+            "description": {
+                "type": "string",
+                "example": "John"
+            },
+            "extension_sip": {
+                "type": "string",
+                "example": "john@fpbx.de"
+            },
+            "extension_pstn": {
+                "type": "string",
+                "example": "+492219998887777"
+            },
+            "extension_type": {
+                "type": "string",
+                "example": "SIP",
+                "enum": [
+                    "SIP",
+                    "PSTN"
+                ]
+            },
+            "agent_type": {
+                "type": "string",
+                "example": "Supervisor",
+                "enum": [
+                    "Supervisor",
+                    "Agent"
+                ]
+            },
+            "status": {
+                "type": "string",
+                "example": "offline",
+                "enum": [
+                    "offline",
+                    "online",
+                    "dail_out",
+                    "working",
+                    "pause"
+                ]
+            },
+            "priority": {
+                "type": "integer",
+                "format": "int32",
+                "example": 0
+            },
+            "last_call_at": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2018-08-16T11:42:47.000+02:00"
+            },
+            "created_at": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2018-08-16T11:42:47.000+02:00"
+            },
+            "updated_at": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2018-08-16T11:42:47.000+02:00"
+            }
         },
-        "name": {
-            "type": "string",
-            "example": "John"
-        },
-        "description": {
-            "type": "string",
-            "example": "John"
-        },
-        "extension_sip": {
-            "type": "string",
-            "example": "john@fpbx.de"
-        },
-        "extension_pstn": {
-            "type": "string",
-            "example": "+492219998887777"
-        },
-        "extension_type": {
-            "type": "string",
-            "example": "SIP",
-            "enum": [
-                "SIP",
-                "PSTN"
-            ]
-        },
-        "agent_type": {
-            "type": "string",
-            "example": "Supervisor",
-            "enum": [
-                "Supervisor",
-                "Agent"
-            ]
-        },
-        "status": {
-            "type": "string",
-            "example": "offline",
-            "enum": [
-                "offline",
-                "online",
-                "dail_out",
-                "working",
-                "pause"
-            ]
-        },
-        "priority": {
-            "type": "integer",
-            "format": "int32",
-            "example": 0
-        },
-        "last_call_at": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2018-08-16T11:42:47.000+02:00"
-        },
-        "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2018-08-16T11:42:47.000+02:00"
-        },
-        "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2018-08-16T11:42:47.000+02:00"
-        }
+        "description": "CallCenterAgent model"
     }
 }

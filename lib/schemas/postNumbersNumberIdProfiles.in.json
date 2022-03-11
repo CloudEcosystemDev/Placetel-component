@@ -10,13 +10,14 @@
             "type": "object",
             "properties": {
                 "name": {
-                    "description": "Name of the profile",
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of the profile"
                 }
             },
             "required": [
                 "name"
-            ]
+            ],
+            "description": "Creates a new profile for a number"
         }
     }
 }

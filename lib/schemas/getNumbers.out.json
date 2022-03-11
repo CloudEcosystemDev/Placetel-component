@@ -1,56 +1,60 @@
 {
-    "type": "object",
-    "properties": {
-        "id": {
-            "type": "integer",
-            "format": "int32",
-            "example": 1
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "integer",
+                "format": "int32",
+                "example": 1
+            },
+            "prefix": {
+                "type": "string",
+                "example": "0221"
+            },
+            "numonly": {
+                "type": "string",
+                "example": "29191999"
+            },
+            "number": {
+                "type": "string",
+                "example": "022129191999"
+            },
+            "activated": {
+                "type": "boolean",
+                "example": true,
+                "enum": [
+                    true,
+                    false
+                ]
+            },
+            "test_number": {
+                "type": "boolean",
+                "example": true,
+                "enum": [
+                    true,
+                    false
+                ]
+            },
+            "name": {
+                "type": "string",
+                "example": "Number one"
+            },
+            "description": {
+                "type": "string",
+                "example": "This describes my number"
+            },
+            "updated_at": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2018-08-16T11:42:47.000+02:00"
+            },
+            "created_at": {
+                "type": "string",
+                "format": "date-time",
+                "example": "2018-08-16T11:42:47.000+02:00"
+            }
         },
-        "prefix": {
-            "type": "string",
-            "example": "0221"
-        },
-        "numonly": {
-            "type": "string",
-            "example": "29191999"
-        },
-        "number": {
-            "type": "string",
-            "example": "022129191999"
-        },
-        "activated": {
-            "type": "boolean",
-            "example": true,
-            "enum": [
-                true,
-                false
-            ]
-        },
-        "test_number": {
-            "type": "boolean",
-            "example": true,
-            "enum": [
-                true,
-                false
-            ]
-        },
-        "name": {
-            "type": "string",
-            "example": "Number one"
-        },
-        "description": {
-            "type": "string",
-            "example": "This describes my number"
-        },
-        "updated_at": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2018-08-16T11:42:47.000+02:00"
-        },
-        "created_at": {
-            "type": "string",
-            "format": "date-time",
-            "example": "2018-08-16T11:42:47.000+02:00"
-        }
+        "description": "Number model"
     }
 }
