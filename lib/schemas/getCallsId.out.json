@@ -31,6 +31,10 @@
                             "format": "int32",
                             "example": 1
                         },
+                        "routing_id": {
+                            "type": "string",
+                            "example": 1
+                        },
                         "prefix": {
                             "type": "string",
                             "example": "0221"

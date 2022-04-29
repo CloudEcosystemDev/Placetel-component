@@ -69,6 +69,49 @@
                     ],
                     "example": true
                 },
+                "permissions": {
+                    "type": "object",
+                    "description": "Configure advanced permission of this user",
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "enum": [
+                                true,
+                                false
+                            ],
+                            "default": true,
+                            "example": true
+                        },
+                        "blocks": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "billing_record/index",
+                                    "invoice/index",
+                                    "addresses/edit",
+                                    "order",
+                                    "simple/numbers",
+                                    "/fax",
+                                    "/sip_users",
+                                    "simple/index",
+                                    "routing_plans/index",
+                                    "details/robjectlist",
+                                    "simple/groups",
+                                    "groups/edit",
+                                    "provisioning/index",
+                                    "prompts/index",
+                                    "contacts",
+                                    "/cc",
+                                    ":cc_reporting"
+                                ]
+                            }
+                        }
+                    },
+                    "required": [
+                        "blocks"
+                    ]
+                },
                 "avatar": {
                     "type": "string",
                     "description": "Base64 encoded image as [data uri](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)"

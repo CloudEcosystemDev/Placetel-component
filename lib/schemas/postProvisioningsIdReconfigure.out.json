@@ -84,6 +84,20 @@
                         ]
                     }
                 },
+                "permissions": {
+                    "type": "object",
+                    "properties": {
+                        "blocks": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "enabled": {
+                            "type": "boolean"
+                        }
+                    }
+                },
                 "updated_at": {
                     "type": "string",
                     "format": "date-time",

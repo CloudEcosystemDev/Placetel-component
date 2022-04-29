@@ -31,19 +31,6 @@
             "title": "Function to run a lookup",
             "description": "Function to call an internal trigger or action"
         },
-        "getNumbersNumberIdProfiles": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List profiles for a number",
-            "description": "Lists all available profiles for a number ",
-            "callParams": {
-                "pathName": "/numbers/{number_id}/profiles",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getNumbersNumberIdProfiles.in.json",
-                "out": "./lib/schemas/getNumbersNumberIdProfiles.out.json"
-            }
-        },
         "getContacts": {
             "main": "./lib/triggers/trigger.js",
             "title": "Get all contacts",
@@ -57,17 +44,17 @@
                 "out": "./lib/schemas/getContacts.out.json"
             }
         },
-        "getFaxes": {
+        "getNumbersNumberIdProfiles": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Fetch in- and outbound faxes",
-            "description": "Provides a list of all faxes",
+            "title": "List profiles for a number",
+            "description": "Lists all available profiles for a number ",
             "callParams": {
-                "pathName": "/faxes",
+                "pathName": "/numbers/{number_id}/profiles",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getFaxes.in.json",
-                "out": "./lib/schemas/getFaxes.out.json"
+                "in": "./lib/schemas/getNumbersNumberIdProfiles.in.json",
+                "out": "./lib/schemas/getNumbersNumberIdProfiles.out.json"
             }
         },
         "getNumbers": {
@@ -83,6 +70,19 @@
                 "out": "./lib/schemas/getNumbers.out.json"
             }
         },
+        "getPrompts": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Fetch all prompts",
+            "description": "Provides a list of all prompts",
+            "callParams": {
+                "pathName": "/prompts",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getPrompts.in.json",
+                "out": "./lib/schemas/getPrompts.out.json"
+            }
+        },
         "getSipUsersIdShortCodes": {
             "main": "./lib/triggers/trigger.js",
             "title": "Short codes",
@@ -94,6 +94,19 @@
             "metadata": {
                 "in": "./lib/schemas/getSipUsersIdShortCodes.in.json",
                 "out": "./lib/schemas/getSipUsersIdShortCodes.out.json"
+            }
+        },
+        "getFaxes": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Fetch in- and outbound faxes",
+            "description": "Provides a list of all faxes",
+            "callParams": {
+                "pathName": "/faxes",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getFaxes.in.json",
+                "out": "./lib/schemas/getFaxes.out.json"
             }
         },
         "getSipUsers": {
@@ -109,17 +122,17 @@
                 "out": "./lib/schemas/getSipUsers.out.json"
             }
         },
-        "getPrompts": {
+        "getSubscriptions": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Fetch all prompts",
-            "description": "Provides a list of all prompts",
+            "title": "List subscriptions",
+            "description": "Fetch a list of all registered subscriptions",
             "callParams": {
-                "pathName": "/prompts",
+                "pathName": "/subscriptions",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getPrompts.in.json",
-                "out": "./lib/schemas/getPrompts.out.json"
+                "in": "./lib/schemas/getSubscriptions.in.json",
+                "out": "./lib/schemas/getSubscriptions.out.json"
             }
         },
         "getUsers": {
@@ -135,19 +148,6 @@
                 "out": "./lib/schemas/getUsers.out.json"
             }
         },
-        "getSubscriptions": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "List subscriptions",
-            "description": "Fetch a list of all registered subscriptions",
-            "callParams": {
-                "pathName": "/subscriptions",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getSubscriptions.in.json",
-                "out": "./lib/schemas/getSubscriptions.out.json"
-            }
-        },
         "getGroups": {
             "main": "./lib/triggers/trigger.js",
             "title": "Fetch all groups",
@@ -159,58 +159,6 @@
             "metadata": {
                 "in": "./lib/schemas/getGroups.in.json",
                 "out": "./lib/schemas/getGroups.out.json"
-            }
-        },
-        "getRoutingPlansIdRoutings": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Get a routing plans objects",
-            "description": "Get objects for routing plan",
-            "callParams": {
-                "pathName": "/routing_plans/{id}/routings",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getRoutingPlansIdRoutings.in.json",
-                "out": "./lib/schemas/getRoutingPlansIdRoutings.out.json"
-            }
-        },
-        "getRoutingPlans": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Get all routing plans",
-            "description": "Provides a list of routing plans",
-            "callParams": {
-                "pathName": "/routing_plans",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getRoutingPlans.in.json",
-                "out": "./lib/schemas/getRoutingPlans.out.json"
-            }
-        },
-        "getCalls": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Fetch all incoming calls",
-            "description": "Provides a list of all calls",
-            "callParams": {
-                "pathName": "/calls",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getCalls.in.json",
-                "out": "./lib/schemas/getCalls.out.json"
-            }
-        },
-        "getCallCenterAgents": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Fetch all call center agents",
-            "description": "Provides a list of all call center agents",
-            "callParams": {
-                "pathName": "/call_center_agents",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getCallCenterAgents.in.json",
-                "out": "./lib/schemas/getCallCenterAgents.out.json"
             }
         },
         "getRoutingPlansIdSimulate": {
@@ -226,17 +174,43 @@
                 "out": "./lib/schemas/getRoutingPlansIdSimulate.out.json"
             }
         },
-        "getCallCenterCalls": {
+        "getRoutingPlans": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Fetch all call center calls",
-            "description": "Provides a list of all call center calls",
+            "title": "Get all routing plans",
+            "description": "Provides a list of routing plans",
             "callParams": {
-                "pathName": "/call_center_calls",
+                "pathName": "/routing_plans",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getCallCenterCalls.in.json",
-                "out": "./lib/schemas/getCallCenterCalls.out.json"
+                "in": "./lib/schemas/getRoutingPlans.in.json",
+                "out": "./lib/schemas/getRoutingPlans.out.json"
+            }
+        },
+        "getRoutings": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get all routings",
+            "description": "Provides a list of routing",
+            "callParams": {
+                "pathName": "/routings",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRoutings.in.json",
+                "out": "./lib/schemas/getRoutings.out.json"
+            }
+        },
+        "getRoutingPlansIdRoutings": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Get a routing plans objects",
+            "description": "Get objects for routing plan",
+            "callParams": {
+                "pathName": "/routing_plans/{id}/routings",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRoutingPlansIdRoutings.in.json",
+                "out": "./lib/schemas/getRoutingPlansIdRoutings.out.json"
             }
         },
         "getCallDetailRecords": {
@@ -250,6 +224,32 @@
             "metadata": {
                 "in": "./lib/schemas/getCallDetailRecords.in.json",
                 "out": "./lib/schemas/getCallDetailRecords.out.json"
+            }
+        },
+        "getCalls": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Fetch all incoming calls",
+            "description": "Provides a list of all calls",
+            "callParams": {
+                "pathName": "/calls",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCalls.in.json",
+                "out": "./lib/schemas/getCalls.out.json"
+            }
+        },
+        "getCallCenterCalls": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Fetch all call center calls",
+            "description": "Provides a list of all call center calls",
+            "callParams": {
+                "pathName": "/call_center_calls",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCallCenterCalls.in.json",
+                "out": "./lib/schemas/getCallCenterCalls.out.json"
             }
         },
         "getDevices": {
@@ -278,19 +278,6 @@
                 "out": "./lib/schemas/getProvisioningsIdCustomConfigurations.out.json"
             }
         },
-        "getCallCenterQueues": {
-            "main": "./lib/triggers/trigger.js",
-            "title": "Fetch all call center queues",
-            "description": "Provides a list of all call center queues",
-            "callParams": {
-                "pathName": "/call_center_queues",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getCallCenterQueues.in.json",
-                "out": "./lib/schemas/getCallCenterQueues.out.json"
-            }
-        },
         "getMe": {
             "main": "./lib/triggers/trigger.js",
             "title": "Me",
@@ -304,17 +291,30 @@
                 "out": "./lib/schemas/getMe.out.json"
             }
         },
-        "getRecordings": {
+        "getCallCenterAgents": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Fetch call recordings",
-            "description": "Provides a list of all call recordings",
+            "title": "Fetch all call center agents",
+            "description": "Provides a list of all call center agents",
             "callParams": {
-                "pathName": "/recordings",
+                "pathName": "/call_center_agents",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getRecordings.in.json",
-                "out": "./lib/schemas/getRecordings.out.json"
+                "in": "./lib/schemas/getCallCenterAgents.in.json",
+                "out": "./lib/schemas/getCallCenterAgents.out.json"
+            }
+        },
+        "getCallCenterQueues": {
+            "main": "./lib/triggers/trigger.js",
+            "title": "Fetch all call center queues",
+            "description": "Provides a list of all call center queues",
+            "callParams": {
+                "pathName": "/call_center_queues",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCallCenterQueues.in.json",
+                "out": "./lib/schemas/getCallCenterQueues.out.json"
             }
         },
         "getProvisionings": {
@@ -330,21 +330,34 @@
                 "out": "./lib/schemas/getProvisionings.out.json"
             }
         },
-        "getRoutings": {
+        "getRecordings": {
             "main": "./lib/triggers/trigger.js",
-            "title": "Get all routings",
-            "description": "Provides a list of routing",
+            "title": "Fetch call recordings",
+            "description": "Provides a list of all call recordings",
             "callParams": {
-                "pathName": "/routings",
+                "pathName": "/recordings",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getRoutings.in.json",
-                "out": "./lib/schemas/getRoutings.out.json"
+                "in": "./lib/schemas/getRecordings.in.json",
+                "out": "./lib/schemas/getRecordings.out.json"
             }
         }
     },
     "actions": {
+        "deleteNumbersNumberIdProfilesId": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a profile for a number",
+            "description": "Removes the profile for a number",
+            "callParams": {
+                "pathName": "/numbers/{number_id}/profiles/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteNumbersNumberIdProfilesId.in.json",
+                "out": "./lib/schemas/deleteNumbersNumberIdProfilesId.out.json"
+            }
+        },
         "postNumbersNumberIdProfiles": {
             "main": "./lib/actions/action.js",
             "title": "Creates a new profile for a number",
@@ -357,74 +370,6 @@
             "metadata": {
                 "in": "./lib/schemas/postNumbersNumberIdProfiles.in.json",
                 "out": "./lib/schemas/postNumbersNumberIdProfiles.out.json"
-            }
-        },
-        "getNumbersId": {
-            "main": "./lib/actions/action.js",
-            "title": "Retrieve a number",
-            "description": "Fetches a number by its ID",
-            "callParams": {
-                "pathName": "/numbers/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getNumbersId.in.json",
-                "out": "./lib/schemas/getNumbersId.out.json"
-            }
-        },
-        "getCtiMac": {
-            "main": "./lib/actions/action.js",
-            "title": "Get config params",
-            "description": "Get config params",
-            "callParams": {
-                "pathName": "/cti/{mac}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getCtiMac.in.json",
-                "out": "./lib/schemas/getCtiMac.out.json"
-            }
-        },
-        "postContacts": {
-            "main": "./lib/actions/action.js",
-            "title": "Create a contact",
-            "description": "Creates a contact",
-            "callParams": {
-                "pathName": "/contacts",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/postContacts.in.json",
-                "out": "./lib/schemas/postContacts.out.json"
-            }
-        },
-        "postCtiMacSendDtmfDigits": {
-            "main": "./lib/actions/action.js",
-            "title": "Send DTMF Digits",
-            "description": "This method allows to sendDTMFDigits on a current active call.",
-            "callParams": {
-                "pathName": "/cti/{mac}/send_dtmf_digits",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/postCtiMacSendDtmfDigits.in.json",
-                "out": "./lib/schemas/postCtiMacSendDtmfDigits.out.json"
-            }
-        },
-        "putCtiMac": {
-            "main": "./lib/actions/action.js",
-            "title": "Set config params",
-            "description": "Set config params",
-            "callParams": {
-                "pathName": "/cti/{mac}",
-                "method": "put",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/putCtiMac.in.json",
-                "out": "./lib/schemas/putCtiMac.out.json"
             }
         },
         "putContactsId": {
@@ -441,33 +386,6 @@
                 "out": "./lib/schemas/putContactsId.out.json"
             }
         },
-        "deleteContactsId": {
-            "main": "./lib/actions/action.js",
-            "title": "Deletes a contact",
-            "description": "Deletes a contact by its ID",
-            "callParams": {
-                "pathName": "/contacts/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteContactsId.in.json",
-                "out": "./lib/schemas/deleteContactsId.out.json"
-            }
-        },
-        "postCtiMacStartTransfer": {
-            "main": "./lib/actions/action.js",
-            "title": "Start transfer",
-            "description": "This method allows to initiate the tranfser on the call specified by the call_id.",
-            "callParams": {
-                "pathName": "/cti/{mac}/start_transfer",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/postCtiMacStartTransfer.in.json",
-                "out": "./lib/schemas/postCtiMacStartTransfer.out.json"
-            }
-        },
         "getContactsId": {
             "main": "./lib/actions/action.js",
             "title": "Retrieve a contact",
@@ -481,18 +399,86 @@
                 "out": "./lib/schemas/getContactsId.out.json"
             }
         },
-        "postCtiMacStartConference": {
+        "getCtiMac": {
             "main": "./lib/actions/action.js",
-            "title": "Start conference",
-            "description": "This method allows to initiate conference on the call specified by the call_id.",
+            "title": "Get config params",
+            "description": "Get config params",
             "callParams": {
-                "pathName": "/cti/{mac}/start_conference",
+                "pathName": "/cti/{mac}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCtiMac.in.json",
+                "out": "./lib/schemas/getCtiMac.out.json"
+            }
+        },
+        "putCtiMac": {
+            "main": "./lib/actions/action.js",
+            "title": "Set config params",
+            "description": "Set config params",
+            "callParams": {
+                "pathName": "/cti/{mac}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/putCtiMac.in.json",
+                "out": "./lib/schemas/putCtiMac.out.json"
+            }
+        },
+        "deleteContactsId": {
+            "main": "./lib/actions/action.js",
+            "title": "Deletes a contact",
+            "description": "Deletes a contact by its ID",
+            "callParams": {
+                "pathName": "/contacts/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteContactsId.in.json",
+                "out": "./lib/schemas/deleteContactsId.out.json"
+            }
+        },
+        "postCtiMacResume": {
+            "main": "./lib/actions/action.js",
+            "title": "Resume",
+            "description": "This method allows device to resume the call specified by the call_id.",
+            "callParams": {
+                "pathName": "/cti/{mac}/resume",
                 "method": "post",
                 "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/postCtiMacStartConference.in.json",
-                "out": "./lib/schemas/postCtiMacStartConference.out.json"
+                "in": "./lib/schemas/postCtiMacResume.in.json",
+                "out": "./lib/schemas/postCtiMacResume.out.json"
+            }
+        },
+        "putNumbersNumberIdProfiles": {
+            "main": "./lib/actions/action.js",
+            "title": "Activates a profile for a number",
+            "description": "Change the active profile for a number",
+            "callParams": {
+                "pathName": "/numbers/{number_id}/profiles",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/putNumbersNumberIdProfiles.in.json",
+                "out": "./lib/schemas/putNumbersNumberIdProfiles.out.json"
+            }
+        },
+        "postCtiMacDial": {
+            "main": "./lib/actions/action.js",
+            "title": "Dial",
+            "description": "This method initiates a new call.",
+            "callParams": {
+                "pathName": "/cti/{mac}/dial",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCtiMacDial.in.json",
+                "out": "./lib/schemas/postCtiMacDial.out.json"
             }
         },
         "postCtiMacHold": {
@@ -523,72 +509,18 @@
                 "out": "./lib/schemas/postCtiMacHangup.out.json"
             }
         },
-        "postCtiMacDial": {
+        "postCtiMacSendDtmfDigits": {
             "main": "./lib/actions/action.js",
-            "title": "Dial",
-            "description": "This method initiates a new call.",
+            "title": "Send DTMF Digits",
+            "description": "This method allows to sendDTMFDigits on a current active call.",
             "callParams": {
-                "pathName": "/cti/{mac}/dial",
+                "pathName": "/cti/{mac}/send_dtmf_digits",
                 "method": "post",
                 "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/postCtiMacDial.in.json",
-                "out": "./lib/schemas/postCtiMacDial.out.json"
-            }
-        },
-        "postCtiMacResume": {
-            "main": "./lib/actions/action.js",
-            "title": "Resume",
-            "description": "This method allows device to resume the call specified by the call_id.",
-            "callParams": {
-                "pathName": "/cti/{mac}/resume",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/postCtiMacResume.in.json",
-                "out": "./lib/schemas/postCtiMacResume.out.json"
-            }
-        },
-        "deleteNumbersNumberIdProfilesId": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a profile for a number",
-            "description": "Removes the profile for a number",
-            "callParams": {
-                "pathName": "/numbers/{number_id}/profiles/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteNumbersNumberIdProfilesId.in.json",
-                "out": "./lib/schemas/deleteNumbersNumberIdProfilesId.out.json"
-            }
-        },
-        "postCtiMacCompleteTransfer": {
-            "main": "./lib/actions/action.js",
-            "title": "Complete transfer",
-            "description": "This method allows to initiate the tranfser on the call specified by the call_id.",
-            "callParams": {
-                "pathName": "/cti/{mac}/complete_transfer",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/postCtiMacCompleteTransfer.in.json",
-                "out": "./lib/schemas/postCtiMacCompleteTransfer.out.json"
-            }
-        },
-        "deleteFaxesId": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a fax",
-            "description": "Delete a fax by its ID",
-            "callParams": {
-                "pathName": "/faxes/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteFaxesId.in.json",
-                "out": "./lib/schemas/deleteFaxesId.out.json"
+                "in": "./lib/schemas/postCtiMacSendDtmfDigits.in.json",
+                "out": "./lib/schemas/postCtiMacSendDtmfDigits.out.json"
             }
         },
         "postCtiMacDecline": {
@@ -605,46 +537,18 @@
                 "out": "./lib/schemas/postCtiMacDecline.out.json"
             }
         },
-        "putPromptsId": {
+        "postCtiMacCompleteTransfer": {
             "main": "./lib/actions/action.js",
-            "title": "Update a prompt",
-            "description": "Update a prompt by its ID",
+            "title": "Complete transfer",
+            "description": "This method allows to initiate the tranfser on the call specified by the call_id.",
             "callParams": {
-                "pathName": "/prompts/{id}",
-                "method": "put",
+                "pathName": "/cti/{mac}/complete_transfer",
+                "method": "post",
                 "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/putPromptsId.in.json",
-                "out": "./lib/schemas/putPromptsId.out.json"
-            }
-        },
-        "putSipUsersId": {
-            "main": "./lib/actions/action.js",
-            "title": "Update a sip user",
-            "description": "Update a sip user by its ID",
-            "callParams": {
-                "pathName": "/sip_users/{id}",
-                "method": "put",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/putSipUsersId.in.json",
-                "out": "./lib/schemas/putSipUsersId.out.json"
-            }
-        },
-        "putNumbersNumberIdProfiles": {
-            "main": "./lib/actions/action.js",
-            "title": "Activates a profile for a number",
-            "description": "Change the active profile for a number",
-            "callParams": {
-                "pathName": "/numbers/{number_id}/profiles",
-                "method": "put",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/putNumbersNumberIdProfiles.in.json",
-                "out": "./lib/schemas/putNumbersNumberIdProfiles.out.json"
+                "in": "./lib/schemas/postCtiMacCompleteTransfer.in.json",
+                "out": "./lib/schemas/postCtiMacCompleteTransfer.out.json"
             }
         },
         "postCtiMacBlindTransfer": {
@@ -661,17 +565,18 @@
                 "out": "./lib/schemas/postCtiMacBlindTransfer.out.json"
             }
         },
-        "deleteSipUsersIdShortCodesCodeId": {
+        "postCtiMacStartConference": {
             "main": "./lib/actions/action.js",
-            "title": "Delete short code",
-            "description": "Delete sip user short code",
+            "title": "Start conference",
+            "description": "This method allows to initiate conference on the call specified by the call_id.",
             "callParams": {
-                "pathName": "/sip_users/{id}/short_codes/{code_id}",
-                "method": "delete"
+                "pathName": "/cti/{mac}/start_conference",
+                "method": "post",
+                "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/deleteSipUsersIdShortCodesCodeId.in.json",
-                "out": "./lib/schemas/deleteSipUsersIdShortCodesCodeId.out.json"
+                "in": "./lib/schemas/postCtiMacStartConference.in.json",
+                "out": "./lib/schemas/postCtiMacStartConference.out.json"
             }
         },
         "postFaxes": {
@@ -688,31 +593,58 @@
                 "out": "./lib/schemas/postFaxes.out.json"
             }
         },
-        "postSipUsersIdShortCodes": {
+        "getFaxesId": {
             "main": "./lib/actions/action.js",
-            "title": "Create short code",
-            "description": "Create sip user short code",
+            "title": "Fetch specific fax",
+            "description": "Fetch in- or outbound fax",
             "callParams": {
-                "pathName": "/sip_users/{id}/short_codes",
+                "pathName": "/faxes/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getFaxesId.in.json",
+                "out": "./lib/schemas/getFaxesId.out.json"
+            }
+        },
+        "postCtiMacStartTransfer": {
+            "main": "./lib/actions/action.js",
+            "title": "Start transfer",
+            "description": "This method allows to initiate the tranfser on the call specified by the call_id.",
+            "callParams": {
+                "pathName": "/cti/{mac}/start_transfer",
                 "method": "post",
                 "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/postSipUsersIdShortCodes.in.json",
-                "out": "./lib/schemas/postSipUsersIdShortCodes.out.json"
+                "in": "./lib/schemas/postCtiMacStartTransfer.in.json",
+                "out": "./lib/schemas/postCtiMacStartTransfer.out.json"
             }
         },
-        "putSubscriptions": {
+        "putPromptsId": {
             "main": "./lib/actions/action.js",
-            "title": "Add a subscription",
+            "title": "Update a prompt",
+            "description": "Update a prompt by its ID",
             "callParams": {
-                "pathName": "/subscriptions",
+                "pathName": "/prompts/{id}",
                 "method": "put",
                 "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/putSubscriptions.in.json",
-                "out": "./lib/schemas/putSubscriptions.out.json"
+                "in": "./lib/schemas/putPromptsId.in.json",
+                "out": "./lib/schemas/putPromptsId.out.json"
+            }
+        },
+        "deleteSipUsersIdShortCodesCodeId": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete short code",
+            "description": "Delete sip user short code",
+            "callParams": {
+                "pathName": "/sip_users/{id}/short_codes/{code_id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteSipUsersIdShortCodesCodeId.in.json",
+                "out": "./lib/schemas/deleteSipUsersIdShortCodesCodeId.out.json"
             }
         },
         "deletePromptsId": {
@@ -728,247 +660,17 @@
                 "out": "./lib/schemas/deletePromptsId.out.json"
             }
         },
-        "deleteSipUsersId": {
+        "deleteFaxesId": {
             "main": "./lib/actions/action.js",
-            "title": "Delete a sip user",
-            "description": "Delete a sip user by its ID",
-            "callParams": {
-                "pathName": "/sip_users/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteSipUsersId.in.json",
-                "out": "./lib/schemas/deleteSipUsersId.out.json"
-            }
-        },
-        "postCtiMacAnswer": {
-            "main": "./lib/actions/action.js",
-            "title": "Answer",
-            "description": "This method allows device to answer a ringing call with given call_id.",
-            "callParams": {
-                "pathName": "/cti/{mac}/answer",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/postCtiMacAnswer.in.json",
-                "out": "./lib/schemas/postCtiMacAnswer.out.json"
-            }
-        },
-        "getGroupsId": {
-            "main": "./lib/actions/action.js",
-            "title": "Fetch a group",
-            "description": "Fetch a groups by its ID",
-            "callParams": {
-                "pathName": "/groups/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getGroupsId.in.json",
-                "out": "./lib/schemas/getGroupsId.out.json"
-            }
-        },
-        "deleteUsersId": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a subuser",
-            "description": "Delete a subuser by its ID",
-            "callParams": {
-                "pathName": "/users/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteUsersId.in.json",
-                "out": "./lib/schemas/deleteUsersId.out.json"
-            }
-        },
-        "postSipUsers": {
-            "main": "./lib/actions/action.js",
-            "title": "Create a sip user",
-            "description": "Create a new sip user",
-            "callParams": {
-                "pathName": "/sip_users",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/postSipUsers.in.json",
-                "out": "./lib/schemas/postSipUsers.out.json"
-            }
-        },
-        "putGroupsId": {
-            "main": "./lib/actions/action.js",
-            "title": "Update a group",
-            "description": "Update a group by its ID",
-            "callParams": {
-                "pathName": "/groups/{id}",
-                "method": "put",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/putGroupsId.in.json",
-                "out": "./lib/schemas/putGroupsId.out.json"
-            }
-        },
-        "getPromptsId": {
-            "main": "./lib/actions/action.js",
-            "title": "Retrieve a prompt",
-            "description": "Fetches a prompt by its ID",
-            "callParams": {
-                "pathName": "/prompts/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getPromptsId.in.json",
-                "out": "./lib/schemas/getPromptsId.out.json"
-            }
-        },
-        "postCtiMacCompleteConference": {
-            "main": "./lib/actions/action.js",
-            "title": "Complete conference",
-            "description": "This method allows to complete conference on the call specified by the call_id.",
-            "callParams": {
-                "pathName": "/cti/{mac}/complete_conference",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/postCtiMacCompleteConference.in.json",
-                "out": "./lib/schemas/postCtiMacCompleteConference.out.json"
-            }
-        },
-        "deleteRoutingsNumberOrId": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a routing object",
-            "description": "Delete a routing object",
-            "callParams": {
-                "pathName": "/routings/{number_or_id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteRoutingsNumberOrId.in.json",
-                "out": "./lib/schemas/deleteRoutingsNumberOrId.out.json"
-            }
-        },
-        "deleteGroupsId": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a group",
-            "description": "Delete a group by its ID",
-            "callParams": {
-                "pathName": "/groups/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteGroupsId.in.json",
-                "out": "./lib/schemas/deleteGroupsId.out.json"
-            }
-        },
-        "getRoutingsNumberOrId": {
-            "main": "./lib/actions/action.js",
-            "title": "Retrieve routing",
-            "description": "Fetches a routing",
-            "callParams": {
-                "pathName": "/routings/{number_or_id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getRoutingsNumberOrId.in.json",
-                "out": "./lib/schemas/getRoutingsNumberOrId.out.json"
-            }
-        },
-        "putRoutingsNumberOrId": {
-            "main": "./lib/actions/action.js",
-            "title": "Update routing",
-            "description": "Updates the routing object. Routing can be set to: `forward`, `group`, `plan`, `ivr`, `queue` or `api`",
-            "callParams": {
-                "pathName": "/routings/{number_or_id}",
-                "method": "put",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/putRoutingsNumberOrId.in.json",
-                "out": "./lib/schemas/putRoutingsNumberOrId.out.json"
-            }
-        },
-        "getFaxesId": {
-            "main": "./lib/actions/action.js",
-            "title": "Fetch specific fax",
-            "description": "Fetch in- or outbound fax",
+            "title": "Delete a fax",
+            "description": "Delete a fax by its ID",
             "callParams": {
                 "pathName": "/faxes/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getFaxesId.in.json",
-                "out": "./lib/schemas/getFaxesId.out.json"
-            }
-        },
-        "postRoutings": {
-            "main": "./lib/actions/action.js",
-            "title": "Create a routing object",
-            "description": "Create a routing object. Routing can be created as: `forward`, `group`, `ivr`, `queue` or `api`",
-            "callParams": {
-                "pathName": "/routings",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/postRoutings.in.json",
-                "out": "./lib/schemas/postRoutings.out.json"
-            }
-        },
-        "postCtiMacDialDigit": {
-            "main": "./lib/actions/action.js",
-            "title": "Dial digit",
-            "description": "This method initiates a new call.",
-            "callParams": {
-                "pathName": "/cti/{mac}/dial_digit",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/postCtiMacDialDigit.in.json",
-                "out": "./lib/schemas/postCtiMacDialDigit.out.json"
-            }
-        },
-        "deleteRoutingPlansId": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a routing plan",
-            "description": "Delete a routing plan",
-            "callParams": {
-                "pathName": "/routing_plans/{id}",
                 "method": "delete"
             },
             "metadata": {
-                "in": "./lib/schemas/deleteRoutingPlansId.in.json",
-                "out": "./lib/schemas/deleteRoutingPlansId.out.json"
-            }
-        },
-        "postRoutingPlans": {
-            "main": "./lib/actions/action.js",
-            "title": "Create a routing plan",
-            "description": "Create a routing plan",
-            "callParams": {
-                "pathName": "/routing_plans",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/postRoutingPlans.in.json",
-                "out": "./lib/schemas/postRoutingPlans.out.json"
-            }
-        },
-        "postGroups": {
-            "main": "./lib/actions/action.js",
-            "title": "Create a group",
-            "description": "Create a new group",
-            "callParams": {
-                "pathName": "/groups",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/postGroups.in.json",
-                "out": "./lib/schemas/postGroups.out.json"
+                "in": "./lib/schemas/deleteFaxesId.in.json",
+                "out": "./lib/schemas/deleteFaxesId.out.json"
             }
         },
         "postPrompts": {
@@ -985,18 +687,72 @@
                 "out": "./lib/schemas/postPrompts.out.json"
             }
         },
-        "putRoutingPlansId": {
+        "postCtiMacCompleteConference": {
             "main": "./lib/actions/action.js",
-            "title": "Update a routing plan",
-            "description": "Update a routing plan",
+            "title": "Complete conference",
+            "description": "This method allows to complete conference on the call specified by the call_id.",
             "callParams": {
-                "pathName": "/routing_plans/{id}",
-                "method": "put",
+                "pathName": "/cti/{mac}/complete_conference",
+                "method": "post",
                 "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/putRoutingPlansId.in.json",
-                "out": "./lib/schemas/putRoutingPlansId.out.json"
+                "in": "./lib/schemas/postCtiMacCompleteConference.in.json",
+                "out": "./lib/schemas/postCtiMacCompleteConference.out.json"
+            }
+        },
+        "deleteSipUsersId": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a sip user",
+            "description": "Delete a sip user by its ID",
+            "callParams": {
+                "pathName": "/sip_users/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteSipUsersId.in.json",
+                "out": "./lib/schemas/deleteSipUsersId.out.json"
+            }
+        },
+        "getSipUsersId": {
+            "main": "./lib/actions/action.js",
+            "title": "Fetch a sip user",
+            "description": "Fetch a sip users by its ID",
+            "callParams": {
+                "pathName": "/sip_users/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getSipUsersId.in.json",
+                "out": "./lib/schemas/getSipUsersId.out.json"
+            }
+        },
+        "postSipUsers": {
+            "main": "./lib/actions/action.js",
+            "title": "Create a sip user",
+            "description": "Create a new sip user",
+            "callParams": {
+                "pathName": "/sip_users",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/postSipUsers.in.json",
+                "out": "./lib/schemas/postSipUsers.out.json"
+            }
+        },
+        "postSipUsersIdShortCodes": {
+            "main": "./lib/actions/action.js",
+            "title": "Create short code",
+            "description": "Create sip user short code",
+            "callParams": {
+                "pathName": "/sip_users/{id}/short_codes",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/postSipUsersIdShortCodes.in.json",
+                "out": "./lib/schemas/postSipUsersIdShortCodes.out.json"
             }
         },
         "getUsersId": {
@@ -1012,31 +768,56 @@
                 "out": "./lib/schemas/getUsersId.out.json"
             }
         },
-        "postCallCenterAgents": {
+        "getNumbersId": {
             "main": "./lib/actions/action.js",
-            "title": "Create an agent",
-            "description": "Create a new agent",
+            "title": "Retrieve a number",
+            "description": "Fetches a number by its ID",
             "callParams": {
-                "pathName": "/call_center_agents",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/postCallCenterAgents.in.json",
-                "out": "./lib/schemas/postCallCenterAgents.out.json"
-            }
-        },
-        "getCallsId": {
-            "main": "./lib/actions/action.js",
-            "title": "Retrieve a call",
-            "description": "Fetches a call by its ID",
-            "callParams": {
-                "pathName": "/calls/{id}",
+                "pathName": "/numbers/{id}",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getCallsId.in.json",
-                "out": "./lib/schemas/getCallsId.out.json"
+                "in": "./lib/schemas/getNumbersId.in.json",
+                "out": "./lib/schemas/getNumbersId.out.json"
+            }
+        },
+        "deleteSubscriptionsId": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a subscription",
+            "callParams": {
+                "pathName": "/subscriptions/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteSubscriptionsId.in.json",
+                "out": "./lib/schemas/deleteSubscriptionsId.out.json"
+            }
+        },
+        "deleteUsersId": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a subuser",
+            "description": "Delete a subuser by its ID",
+            "callParams": {
+                "pathName": "/users/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteUsersId.in.json",
+                "out": "./lib/schemas/deleteUsersId.out.json"
+            }
+        },
+        "putGroupsId": {
+            "main": "./lib/actions/action.js",
+            "title": "Update a group",
+            "description": "Update a group by its ID",
+            "callParams": {
+                "pathName": "/groups/{id}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/putGroupsId.in.json",
+                "out": "./lib/schemas/putGroupsId.out.json"
             }
         },
         "putUsersId": {
@@ -1053,17 +834,262 @@
                 "out": "./lib/schemas/putUsersId.out.json"
             }
         },
-        "getSipUsersId": {
+        "deleteGroupsId": {
             "main": "./lib/actions/action.js",
-            "title": "Fetch a sip user",
-            "description": "Fetch a sip users by its ID",
+            "title": "Delete a group",
+            "description": "Delete a group by its ID",
             "callParams": {
-                "pathName": "/sip_users/{id}",
+                "pathName": "/groups/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteGroupsId.in.json",
+                "out": "./lib/schemas/deleteGroupsId.out.json"
+            }
+        },
+        "postUsersIdPasswordReset": {
+            "main": "./lib/actions/action.js",
+            "title": "Reset password for account",
+            "description": "Reset password for account",
+            "callParams": {
+                "pathName": "/users/{id}/password_reset",
+                "method": "post"
+            },
+            "metadata": {
+                "in": "./lib/schemas/postUsersIdPasswordReset.in.json",
+                "out": "./lib/schemas/postUsersIdPasswordReset.out.json"
+            }
+        },
+        "getPromptsId": {
+            "main": "./lib/actions/action.js",
+            "title": "Retrieve a prompt",
+            "description": "Fetches a prompt by its ID",
+            "callParams": {
+                "pathName": "/prompts/{id}",
                 "method": "get"
             },
             "metadata": {
-                "in": "./lib/schemas/getSipUsersId.in.json",
-                "out": "./lib/schemas/getSipUsersId.out.json"
+                "in": "./lib/schemas/getPromptsId.in.json",
+                "out": "./lib/schemas/getPromptsId.out.json"
+            }
+        },
+        "postRoutings": {
+            "main": "./lib/actions/action.js",
+            "title": "Create a routing object",
+            "description": "Create a routing object. Routing can be created as: `forward`, `group`, `ivr`, `queue` or `api`",
+            "callParams": {
+                "pathName": "/routings",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/postRoutings.in.json",
+                "out": "./lib/schemas/postRoutings.out.json"
+            }
+        },
+        "postGroups": {
+            "main": "./lib/actions/action.js",
+            "title": "Create a group",
+            "description": "Create a new group",
+            "callParams": {
+                "pathName": "/groups",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/postGroups.in.json",
+                "out": "./lib/schemas/postGroups.out.json"
+            }
+        },
+        "postCtiMacAnswer": {
+            "main": "./lib/actions/action.js",
+            "title": "Answer",
+            "description": "This method allows device to answer a ringing call with given call_id.",
+            "callParams": {
+                "pathName": "/cti/{mac}/answer",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCtiMacAnswer.in.json",
+                "out": "./lib/schemas/postCtiMacAnswer.out.json"
+            }
+        },
+        "postCtiMacDialDigit": {
+            "main": "./lib/actions/action.js",
+            "title": "Dial digit",
+            "description": "This method initiates a new call.",
+            "callParams": {
+                "pathName": "/cti/{mac}/dial_digit",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCtiMacDialDigit.in.json",
+                "out": "./lib/schemas/postCtiMacDialDigit.out.json"
+            }
+        },
+        "getRoutingsNumberOrId": {
+            "main": "./lib/actions/action.js",
+            "title": "Retrieve routing",
+            "description": "Fetches a routing",
+            "callParams": {
+                "pathName": "/routings/{number_or_id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRoutingsNumberOrId.in.json",
+                "out": "./lib/schemas/getRoutingsNumberOrId.out.json"
+            }
+        },
+        "postUsers": {
+            "main": "./lib/actions/action.js",
+            "title": "Create new subuser",
+            "description": "Create a new subuser for your account",
+            "callParams": {
+                "pathName": "/users",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/postUsers.in.json",
+                "out": "./lib/schemas/postUsers.out.json"
+            }
+        },
+        "putRoutingPlansId": {
+            "main": "./lib/actions/action.js",
+            "title": "Update a routing plan",
+            "description": "Update a routing plan",
+            "callParams": {
+                "pathName": "/routing_plans/{id}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/putRoutingPlansId.in.json",
+                "out": "./lib/schemas/putRoutingPlansId.out.json"
+            }
+        },
+        "putRoutingsNumberOrId": {
+            "main": "./lib/actions/action.js",
+            "title": "Update routing",
+            "description": "Updates the routing object. Routing can be set to: `forward`, `group`, `plan`, `ivr`, `queue` or `api`",
+            "callParams": {
+                "pathName": "/routings/{number_or_id}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/putRoutingsNumberOrId.in.json",
+                "out": "./lib/schemas/putRoutingsNumberOrId.out.json"
+            }
+        },
+        "getRoutingPlansId": {
+            "main": "./lib/actions/action.js",
+            "title": "Get a routing plan",
+            "description": "Get a routing plans",
+            "callParams": {
+                "pathName": "/routing_plans/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRoutingPlansId.in.json",
+                "out": "./lib/schemas/getRoutingPlansId.out.json"
+            }
+        },
+        "getCallsId": {
+            "main": "./lib/actions/action.js",
+            "title": "Retrieve a call",
+            "description": "Fetches a call by its ID",
+            "callParams": {
+                "pathName": "/calls/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getCallsId.in.json",
+                "out": "./lib/schemas/getCallsId.out.json"
+            }
+        },
+        "getGroupsId": {
+            "main": "./lib/actions/action.js",
+            "title": "Fetch a group",
+            "description": "Fetch a groups by its ID",
+            "callParams": {
+                "pathName": "/groups/{id}",
+                "method": "get"
+            },
+            "metadata": {
+                "in": "./lib/schemas/getGroupsId.in.json",
+                "out": "./lib/schemas/getGroupsId.out.json"
+            }
+        },
+        "postContacts": {
+            "main": "./lib/actions/action.js",
+            "title": "Create a contact",
+            "description": "Creates a contact",
+            "callParams": {
+                "pathName": "/contacts",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/postContacts.in.json",
+                "out": "./lib/schemas/postContacts.out.json"
+            }
+        },
+        "postCalls": {
+            "main": "./lib/actions/action.js",
+            "title": "Initate a call",
+            "description": "Initates a call",
+            "callParams": {
+                "pathName": "/calls",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCalls.in.json",
+                "out": "./lib/schemas/postCalls.out.json"
+            }
+        },
+        "putCallCenterAgentsId": {
+            "main": "./lib/actions/action.js",
+            "title": "Update an agent",
+            "description": "Update an agent by its ID",
+            "callParams": {
+                "pathName": "/call_center_agents/{id}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/putCallCenterAgentsId.in.json",
+                "out": "./lib/schemas/putCallCenterAgentsId.out.json"
+            }
+        },
+        "postCallCenterAgents": {
+            "main": "./lib/actions/action.js",
+            "title": "Create an agent",
+            "description": "Create a new agent",
+            "callParams": {
+                "pathName": "/call_center_agents",
+                "method": "post",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/postCallCenterAgents.in.json",
+                "out": "./lib/schemas/postCallCenterAgents.out.json"
+            }
+        },
+        "deleteRoutingsNumberOrId": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a routing object",
+            "description": "Delete a routing object",
+            "callParams": {
+                "pathName": "/routings/{number_or_id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteRoutingsNumberOrId.in.json",
+                "out": "./lib/schemas/deleteRoutingsNumberOrId.out.json"
             }
         },
         "putCallCenterQueuesId": {
@@ -1080,6 +1106,19 @@
                 "out": "./lib/schemas/putCallCenterQueuesId.out.json"
             }
         },
+        "deleteRoutingPlansId": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a routing plan",
+            "description": "Delete a routing plan",
+            "callParams": {
+                "pathName": "/routing_plans/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteRoutingPlansId.in.json",
+                "out": "./lib/schemas/deleteRoutingPlansId.out.json"
+            }
+        },
         "postSms": {
             "main": "./lib/actions/action.js",
             "title": "Send SMS",
@@ -1094,18 +1133,58 @@
                 "out": "./lib/schemas/postSms.out.json"
             }
         },
-        "putCallCenterAgentsId": {
+        "putSubscriptions": {
             "main": "./lib/actions/action.js",
-            "title": "Update an agent",
-            "description": "Update an agent by its ID",
+            "title": "Add a subscription",
             "callParams": {
-                "pathName": "/call_center_agents/{id}",
+                "pathName": "/subscriptions",
                 "method": "put",
                 "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/putCallCenterAgentsId.in.json",
-                "out": "./lib/schemas/putCallCenterAgentsId.out.json"
+                "in": "./lib/schemas/putSubscriptions.in.json",
+                "out": "./lib/schemas/putSubscriptions.out.json"
+            }
+        },
+        "deleteCallsId": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a call",
+            "description": "Delete a call by its ID",
+            "callParams": {
+                "pathName": "/calls/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteCallsId.in.json",
+                "out": "./lib/schemas/deleteCallsId.out.json"
+            }
+        },
+        "putProvisioningsId": {
+            "main": "./lib/actions/action.js",
+            "title": "Update a phone provisionings",
+            "description": "Updates a phone provisioning",
+            "callParams": {
+                "pathName": "/provisionings/{id}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/putProvisioningsId.in.json",
+                "out": "./lib/schemas/putProvisioningsId.out.json"
+            }
+        },
+        "putSipUsersId": {
+            "main": "./lib/actions/action.js",
+            "title": "Update a sip user",
+            "description": "Update a sip user by its ID",
+            "callParams": {
+                "pathName": "/sip_users/{id}",
+                "method": "put",
+                "requestContentType": "application/json"
+            },
+            "metadata": {
+                "in": "./lib/schemas/putSipUsersId.in.json",
+                "out": "./lib/schemas/putSipUsersId.out.json"
             }
         },
         "deleteProvisioningsId": {
@@ -1134,18 +1213,44 @@
                 "out": "./lib/schemas/getProvisioningsId.out.json"
             }
         },
-        "postCalls": {
+        "putProvisioningsIdCustomConfigurations": {
             "main": "./lib/actions/action.js",
-            "title": "Initate a call",
-            "description": "Initates a call",
+            "title": "Update or create a phone provisionings custom configuration key",
+            "description": "Updates or creates a phone provisioning custom configuration key",
             "callParams": {
-                "pathName": "/calls",
-                "method": "post",
+                "pathName": "/provisionings/{id}/custom_configurations",
+                "method": "put",
                 "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/postCalls.in.json",
-                "out": "./lib/schemas/postCalls.out.json"
+                "in": "./lib/schemas/putProvisioningsIdCustomConfigurations.in.json",
+                "out": "./lib/schemas/putProvisioningsIdCustomConfigurations.out.json"
+            }
+        },
+        "deleteRecordingsId": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a recording",
+            "description": "Delete a recording by its ID",
+            "callParams": {
+                "pathName": "/recordings/{id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteRecordingsId.in.json",
+                "out": "./lib/schemas/deleteRecordingsId.out.json"
+            }
+        },
+        "deleteProvisioningsIdCustomConfigurationsCustomConfigurationId": {
+            "main": "./lib/actions/action.js",
+            "title": "Delete a phone provisionings custom configuration key",
+            "description": "Delete a phone provisioning custom configuration key",
+            "callParams": {
+                "pathName": "/provisionings/{id}/custom_configurations/{custom_configuration_id}",
+                "method": "delete"
+            },
+            "metadata": {
+                "in": "./lib/schemas/deleteProvisioningsIdCustomConfigurationsCustomConfigurationId.in.json",
+                "out": "./lib/schemas/deleteProvisioningsIdCustomConfigurationsCustomConfigurationId.out.json"
             }
         },
         "postCallCenterQueues": {
@@ -1162,20 +1267,6 @@
                 "out": "./lib/schemas/postCallCenterQueues.out.json"
             }
         },
-        "putProvisioningsId": {
-            "main": "./lib/actions/action.js",
-            "title": "Update a phone provisionings",
-            "description": "Updates a phone provisioning",
-            "callParams": {
-                "pathName": "/provisionings/{id}",
-                "method": "put",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/putProvisioningsId.in.json",
-                "out": "./lib/schemas/putProvisioningsId.out.json"
-            }
-        },
         "postProvisionings": {
             "main": "./lib/actions/action.js",
             "title": "Creates a phone provisionings",
@@ -1188,19 +1279,6 @@
             "metadata": {
                 "in": "./lib/schemas/postProvisionings.in.json",
                 "out": "./lib/schemas/postProvisionings.out.json"
-            }
-        },
-        "deleteRecordingsId": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a recording",
-            "description": "Delete a recording by its ID",
-            "callParams": {
-                "pathName": "/recordings/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteRecordingsId.in.json",
-                "out": "./lib/schemas/deleteRecordingsId.out.json"
             }
         },
         "postProvisioningsIdReconfigure": {
@@ -1216,84 +1294,6 @@
                 "out": "./lib/schemas/postProvisioningsIdReconfigure.out.json"
             }
         },
-        "postUsers": {
-            "main": "./lib/actions/action.js",
-            "title": "Create new subuser",
-            "description": "Create a new subuser for your account",
-            "callParams": {
-                "pathName": "/users",
-                "method": "post",
-                "requestContentType": "application/json"
-            },
-            "metadata": {
-                "in": "./lib/schemas/postUsers.in.json",
-                "out": "./lib/schemas/postUsers.out.json"
-            }
-        },
-        "deleteSubscriptionsId": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a subscription",
-            "callParams": {
-                "pathName": "/subscriptions/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteSubscriptionsId.in.json",
-                "out": "./lib/schemas/deleteSubscriptionsId.out.json"
-            }
-        },
-        "postUsersIdPasswordReset": {
-            "main": "./lib/actions/action.js",
-            "title": "Reset password for account",
-            "description": "Reset password for account",
-            "callParams": {
-                "pathName": "/users/{id}/password_reset",
-                "method": "post"
-            },
-            "metadata": {
-                "in": "./lib/schemas/postUsersIdPasswordReset.in.json",
-                "out": "./lib/schemas/postUsersIdPasswordReset.out.json"
-            }
-        },
-        "getRoutingPlansId": {
-            "main": "./lib/actions/action.js",
-            "title": "Get a routing plan",
-            "description": "Get a routing plans",
-            "callParams": {
-                "pathName": "/routing_plans/{id}",
-                "method": "get"
-            },
-            "metadata": {
-                "in": "./lib/schemas/getRoutingPlansId.in.json",
-                "out": "./lib/schemas/getRoutingPlansId.out.json"
-            }
-        },
-        "deleteCallsId": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a call",
-            "description": "Delete a call by its ID",
-            "callParams": {
-                "pathName": "/calls/{id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteCallsId.in.json",
-                "out": "./lib/schemas/deleteCallsId.out.json"
-            }
-        },
-        "deleteProvisioningsIdCustomConfigurationsCustomConfigurationId": {
-            "main": "./lib/actions/action.js",
-            "title": "Delete a phone provisionings custom configuration key",
-            "description": "Delete a phone provisioning custom configuration key",
-            "callParams": {
-                "pathName": "/provisionings/{id}/custom_configurations/{custom_configuration_id}",
-                "method": "delete"
-            },
-            "metadata": {
-                "in": "./lib/schemas/deleteProvisioningsIdCustomConfigurationsCustomConfigurationId.in.json",
-                "out": "./lib/schemas/deleteProvisioningsIdCustomConfigurationsCustomConfigurationId.out.json"
-            }
-        },
         "getRecordingsId": {
             "main": "./lib/actions/action.js",
             "title": "Fetch specific recording",
@@ -1307,18 +1307,18 @@
                 "out": "./lib/schemas/getRecordingsId.out.json"
             }
         },
-        "putProvisioningsIdCustomConfigurations": {
+        "postRoutingPlans": {
             "main": "./lib/actions/action.js",
-            "title": "Update or create a phone provisionings custom configuration key",
-            "description": "Updates or creates a phone provisioning custom configuration key",
+            "title": "Create a routing plan",
+            "description": "Create a routing plan",
             "callParams": {
-                "pathName": "/provisionings/{id}/custom_configurations",
-                "method": "put",
+                "pathName": "/routing_plans",
+                "method": "post",
                 "requestContentType": "application/json"
             },
             "metadata": {
-                "in": "./lib/schemas/putProvisioningsIdCustomConfigurations.in.json",
-                "out": "./lib/schemas/putProvisioningsIdCustomConfigurations.out.json"
+                "in": "./lib/schemas/postRoutingPlans.in.json",
+                "out": "./lib/schemas/postRoutingPlans.out.json"
             }
         }
     }
