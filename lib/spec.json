@@ -405,6 +405,10 @@
                                             "format": "int32",
                                             "example": 1
                                         },
+                                        "routing_id": {
+                                            "type": "string",
+                                            "example": 1
+                                        },
                                         "prefix": {
                                             "type": "string",
                                             "example": "0221"
@@ -551,6 +555,10 @@
                                             "id": {
                                                 "type": "integer",
                                                 "format": "int32",
+                                                "example": 1
+                                            },
+                                            "routing_id": {
+                                                "type": "string",
                                                 "example": 1
                                             },
                                             "prefix": {
@@ -3504,6 +3512,20 @@
                                                         ]
                                                     }
                                                 },
+                                                "permissions": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "blocks": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "enabled": {
+                                                            "type": "boolean"
+                                                        }
+                                                    }
+                                                },
                                                 "updated_at": {
                                                     "type": "string",
                                                     "format": "date-time",
@@ -3821,6 +3843,20 @@
                                                         ]
                                                     }
                                                 },
+                                                "permissions": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "blocks": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "enabled": {
+                                                            "type": "boolean"
+                                                        }
+                                                    }
+                                                },
                                                 "updated_at": {
                                                     "type": "string",
                                                     "format": "date-time",
@@ -4067,6 +4103,20 @@
                                                             "02211234589",
                                                             "02221234589"
                                                         ]
+                                                    }
+                                                },
+                                                "permissions": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "blocks": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "enabled": {
+                                                            "type": "boolean"
+                                                        }
                                                     }
                                                 },
                                                 "updated_at": {
@@ -4387,6 +4437,20 @@
                                                         ]
                                                     }
                                                 },
+                                                "permissions": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "blocks": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "enabled": {
+                                                            "type": "boolean"
+                                                        }
+                                                    }
+                                                },
                                                 "updated_at": {
                                                     "type": "string",
                                                     "format": "date-time",
@@ -4682,6 +4746,20 @@
                                                                 "02211234589",
                                                                 "02221234589"
                                                             ]
+                                                        }
+                                                    },
+                                                    "permissions": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "blocks": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "enabled": {
+                                                                "type": "boolean"
+                                                            }
                                                         }
                                                     },
                                                     "updated_at": {
@@ -5070,6 +5148,20 @@
                                                 ]
                                             }
                                         },
+                                        "permissions": {
+                                            "type": "object",
+                                            "properties": {
+                                                "blocks": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "enabled": {
+                                                    "type": "boolean"
+                                                }
+                                            }
+                                        },
                                         "updated_at": {
                                             "type": "string",
                                             "format": "date-time",
@@ -5173,6 +5265,49 @@
                                         ],
                                         "example": true
                                     },
+                                    "permissions": {
+                                        "type": "object",
+                                        "description": "Configure advanced permission of this user",
+                                        "properties": {
+                                            "enabled": {
+                                                "type": "boolean",
+                                                "enum": [
+                                                    true,
+                                                    false
+                                                ],
+                                                "default": true,
+                                                "example": true
+                                            },
+                                            "blocks": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "billing_record/index",
+                                                        "invoice/index",
+                                                        "addresses/edit",
+                                                        "order",
+                                                        "simple/numbers",
+                                                        "/fax",
+                                                        "/sip_users",
+                                                        "simple/index",
+                                                        "routing_plans/index",
+                                                        "details/robjectlist",
+                                                        "simple/groups",
+                                                        "groups/edit",
+                                                        "provisioning/index",
+                                                        "prompts/index",
+                                                        "contacts",
+                                                        "/cc",
+                                                        ":cc_reporting"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "required": [
+                                            "blocks"
+                                        ]
+                                    },
                                     "avatar": {
                                         "type": "string",
                                         "description": "Base64 encoded image as [data uri](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)"
@@ -5264,6 +5399,20 @@
                                                     "02211234589",
                                                     "02221234589"
                                                 ]
+                                            }
+                                        },
+                                        "permissions": {
+                                            "type": "object",
+                                            "properties": {
+                                                "blocks": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "enabled": {
+                                                    "type": "boolean"
+                                                }
                                             }
                                         },
                                         "updated_at": {
@@ -5383,6 +5532,20 @@
                                                     "02211234589",
                                                     "02221234589"
                                                 ]
+                                            }
+                                        },
+                                        "permissions": {
+                                            "type": "object",
+                                            "properties": {
+                                                "blocks": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "enabled": {
+                                                    "type": "boolean"
+                                                }
                                             }
                                         },
                                         "updated_at": {
@@ -5584,6 +5747,20 @@
                                                 ]
                                             }
                                         },
+                                        "permissions": {
+                                            "type": "object",
+                                            "properties": {
+                                                "blocks": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "enabled": {
+                                                    "type": "boolean"
+                                                }
+                                            }
+                                        },
                                         "updated_at": {
                                             "type": "string",
                                             "format": "date-time",
@@ -5749,6 +5926,20 @@
                                                         "02211234589",
                                                         "02221234589"
                                                     ]
+                                                }
+                                            },
+                                            "permissions": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "blocks": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "enabled": {
+                                                        "type": "boolean"
+                                                    }
                                                 }
                                             },
                                             "updated_at": {
@@ -5963,6 +6154,20 @@
                                                                         "02211234589",
                                                                         "02221234589"
                                                                     ]
+                                                                }
+                                                            },
+                                                            "permissions": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "blocks": {
+                                                                        "type": "array",
+                                                                        "items": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    },
+                                                                    "enabled": {
+                                                                        "type": "boolean"
+                                                                    }
                                                                 }
                                                             },
                                                             "updated_at": {
@@ -6281,6 +6486,20 @@
                                                                     ]
                                                                 }
                                                             },
+                                                            "permissions": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "blocks": {
+                                                                        "type": "array",
+                                                                        "items": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    },
+                                                                    "enabled": {
+                                                                        "type": "boolean"
+                                                                    }
+                                                                }
+                                                            },
                                                             "updated_at": {
                                                                 "type": "string",
                                                                 "format": "date-time",
@@ -6568,6 +6787,20 @@
                                                                         "02211234589",
                                                                         "02221234589"
                                                                     ]
+                                                                }
+                                                            },
+                                                            "permissions": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "blocks": {
+                                                                        "type": "array",
+                                                                        "items": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    },
+                                                                    "enabled": {
+                                                                        "type": "boolean"
+                                                                    }
                                                                 }
                                                             },
                                                             "updated_at": {
@@ -6886,6 +7119,20 @@
                                                                         "02211234589",
                                                                         "02221234589"
                                                                     ]
+                                                                }
+                                                            },
+                                                            "permissions": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "blocks": {
+                                                                        "type": "array",
+                                                                        "items": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    },
+                                                                    "enabled": {
+                                                                        "type": "boolean"
+                                                                    }
                                                                 }
                                                             },
                                                             "updated_at": {
@@ -7220,6 +7467,20 @@
                                                                             "02211234589",
                                                                             "02221234589"
                                                                         ]
+                                                                    }
+                                                                },
+                                                                "permissions": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "blocks": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                                "type": "string"
+                                                                            }
+                                                                        },
+                                                                        "enabled": {
+                                                                            "type": "boolean"
+                                                                        }
                                                                     }
                                                                 },
                                                                 "updated_at": {
@@ -9032,6 +9293,10 @@
                                                                 "format": "int32",
                                                                 "example": 1
                                                             },
+                                                            "routing_id": {
+                                                                "type": "string",
+                                                                "example": 1
+                                                            },
                                                             "prefix": {
                                                                 "type": "string",
                                                                 "example": "0221"
@@ -9309,6 +9574,10 @@
                                                         "id": {
                                                             "type": "integer",
                                                             "format": "int32",
+                                                            "example": 1
+                                                        },
+                                                        "routing_id": {
+                                                            "type": "string",
                                                             "example": 1
                                                         },
                                                         "prefix": {
@@ -11436,6 +11705,20 @@
                                                         ]
                                                     }
                                                 },
+                                                "permissions": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "blocks": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "enabled": {
+                                                            "type": "boolean"
+                                                        }
+                                                    }
+                                                },
                                                 "updated_at": {
                                                     "type": "string",
                                                     "format": "date-time",
@@ -11668,6 +11951,20 @@
                                                             "02211234589",
                                                             "02221234589"
                                                         ]
+                                                    }
+                                                },
+                                                "permissions": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "blocks": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "enabled": {
+                                                            "type": "boolean"
+                                                        }
                                                     }
                                                 },
                                                 "updated_at": {
@@ -11904,6 +12201,20 @@
                                                             "02211234589",
                                                             "02221234589"
                                                         ]
+                                                    }
+                                                },
+                                                "permissions": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "blocks": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "enabled": {
+                                                            "type": "boolean"
+                                                        }
                                                     }
                                                 },
                                                 "updated_at": {
@@ -12211,6 +12522,20 @@
                                                             "02211234589",
                                                             "02221234589"
                                                         ]
+                                                    }
+                                                },
+                                                "permissions": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "blocks": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "enabled": {
+                                                            "type": "boolean"
+                                                        }
                                                     }
                                                 },
                                                 "updated_at": {
@@ -12582,6 +12907,20 @@
                                                         ]
                                                     }
                                                 },
+                                                "permissions": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "blocks": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "enabled": {
+                                                            "type": "boolean"
+                                                        }
+                                                    }
+                                                },
                                                 "updated_at": {
                                                     "type": "string",
                                                     "format": "date-time",
@@ -12838,6 +13177,20 @@
                                                                 "02211234589",
                                                                 "02221234589"
                                                             ]
+                                                        }
+                                                    },
+                                                    "permissions": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "blocks": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "enabled": {
+                                                                "type": "boolean"
+                                                            }
                                                         }
                                                     },
                                                     "updated_at": {
@@ -13384,6 +13737,10 @@
                     "id": {
                         "type": "integer",
                         "format": "int32",
+                        "example": 1
+                    },
+                    "routing_id": {
+                        "type": "string",
                         "example": 1
                     },
                     "prefix": {
@@ -14396,6 +14753,20 @@
                                     ]
                                 }
                             },
+                            "permissions": {
+                                "type": "object",
+                                "properties": {
+                                    "blocks": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "enabled": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
                             "updated_at": {
                                 "type": "string",
                                 "format": "date-time",
@@ -14550,6 +14921,20 @@
                             ]
                         }
                     },
+                    "permissions": {
+                        "type": "object",
+                        "properties": {
+                            "blocks": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "enabled": {
+                                "type": "boolean"
+                            }
+                        }
+                    },
                     "updated_at": {
                         "type": "string",
                         "format": "date-time",
@@ -14562,6 +14947,20 @@
                     }
                 },
                 "description": "User model"
+            },
+            "Permission": {
+                "type": "object",
+                "properties": {
+                    "blocks": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "enabled": {
+                        "type": "boolean"
+                    }
+                }
             },
             "putSipUsers": {
                 "type": "object",
@@ -14895,6 +15294,49 @@
                         ],
                         "example": true
                     },
+                    "permissions": {
+                        "type": "object",
+                        "description": "Configure advanced permission of this user",
+                        "properties": {
+                            "enabled": {
+                                "type": "boolean",
+                                "enum": [
+                                    true,
+                                    false
+                                ],
+                                "default": true,
+                                "example": true
+                            },
+                            "blocks": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "billing_record/index",
+                                        "invoice/index",
+                                        "addresses/edit",
+                                        "order",
+                                        "simple/numbers",
+                                        "/fax",
+                                        "/sip_users",
+                                        "simple/index",
+                                        "routing_plans/index",
+                                        "details/robjectlist",
+                                        "simple/groups",
+                                        "groups/edit",
+                                        "provisioning/index",
+                                        "prompts/index",
+                                        "contacts",
+                                        "/cc",
+                                        ":cc_reporting"
+                                    ]
+                                }
+                            }
+                        },
+                        "required": [
+                            "blocks"
+                        ]
+                    },
                     "avatar": {
                         "type": "string",
                         "description": "Base64 encoded image as [data uri](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)"
@@ -15122,6 +15564,20 @@
                                                     "02211234589",
                                                     "02221234589"
                                                 ]
+                                            }
+                                        },
+                                        "permissions": {
+                                            "type": "object",
+                                            "properties": {
+                                                "blocks": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "enabled": {
+                                                    "type": "boolean"
+                                                }
                                             }
                                         },
                                         "updated_at": {
@@ -17026,6 +17482,10 @@
                                         "format": "int32",
                                         "example": 1
                                     },
+                                    "routing_id": {
+                                        "type": "string",
+                                        "example": 1
+                                    },
                                     "prefix": {
                                         "type": "string",
                                         "example": "0221"
@@ -17805,6 +18265,20 @@
                                         "02211234589",
                                         "02221234589"
                                     ]
+                                }
+                            },
+                            "permissions": {
+                                "type": "object",
+                                "properties": {
+                                    "blocks": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "enabled": {
+                                        "type": "boolean"
+                                    }
                                 }
                             },
                             "updated_at": {
